@@ -1,19 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
+*::-webkit-scrollbar {
+  display: none;
+}
+.header{
+  margin-left: 26vw;
+  margin-right: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
 .header ul{
   list-style-type: none;
 }
 
 .header li{
-  float: left;
-  margin-left: 10vw;
+  margin-left: 5vw;
+  display: inline-block;
+}
+
+
+.sticky{
+  position: sticky;
+  top: 0;
+  padding-top: 1vh;
 }
 
 .Mid{
   display: block;
+  height: 100vh;
+  width: 98vw;
+  margin-top: 25vh;
 }
 
 .Mid div{
@@ -22,7 +39,43 @@
 
 
 .Name{
-  margin-top: 5vh;
   display: block;
+  font-size: 64px;
+  margin-bottom: 5vh;
+  margin-left: 40vw;
+}
+
+
+
+.block{
+  height: 100vh;
+  width: 98vw;
+}
+
+.Descdes{
+  height: 5vh;
+  width: 40vw;
+  margin-left: 32.5%;
+  margin-right: 35%;
+}
+
+.Desc{
+  display: inline-block;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  top: -25px;
+}
+
+.vl{
+  display: inline-block;
+  border-left: 2px solid black;
+  height: 3vh;
+  margin-top: 1vh;
   text-align: center;
+
+}
+
+#Resume{
+  text-align: center;
+  margin-top: 20vh;
 }

@@ -2,30 +2,40 @@
 export default function Home() {
   return (
     <main>
-        <header className="header">
-          <ul>
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Resume</a></li>
-            <li><a>Projects</a></li>
-            <li><a>Contact</a></li>
-          </ul>
-        </header>
       
+      <div className="sticky">
+        <div className="header grid gap-4 content-center">
+            <ul>
+              <li><a href="#Mids">Home</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#Resume">Resume</a></li>
+              <li><a href="#Projects">Projects</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
+          </div>
+        
+        <hr/>
+      </div>
+      <div id="Mids">
 
-      <div className="Mid">
-        <div className="Name">
-          Joey Lam
+      </div>
+
+
+
+      <div  className="Mid">
+
+        <div >
+          <h1 className="Name">Joey Lam</h1>
         </div>
 
-        <div>
-          <div>
+        <div className="Descdes">
+          <div className="Desc">
             Student
           </div>
-          <div>
+          <div className="Desc">
             Software Engineer
           </div>
-          <div>
+          <div className="Desc">
             Inventor
           </div>
         </div>
@@ -35,14 +45,19 @@ export default function Home() {
 
       </div>
 
-      <div>
-        Resume
+      <div className="block">
+        <h1 id="Resume">Resume</h1>
       </div>
-      <div>
+      <div id="Projects" className="block">
         Projects
       </div>
-      <div>
+      <div id="Contact" className="block">
         Contact
+      </div>
+      <div>
+        <footer>
+
+        </footer>
       </div>
     </main>
   )
