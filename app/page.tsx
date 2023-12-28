@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <main>
       <Image
+        id='Bgs'
         className='Bg'
           src="/IMG_1004.img"
           width={1728}
@@ -15,7 +16,7 @@ export default function Home() {
         <div className="sticky">
           <div className="header grid gap-4 content-center">
               <ul>
-                <li><a href="#Mids">Home</a></li>
+                <li><a href="#Bgs">Home</a></li>
                 <li><a href="#About">About</a></li>
                 <li><a href="#Resume">Resume</a></li>
                 <li><a href="#Projects">Projects</a></li>
@@ -53,7 +54,13 @@ export default function Home() {
 
 
         <div id="About" className="block">
-          <h1>About me</h1>
+          <h1 className='AboutTitle'>About</h1>
+          <h2 className='AboutDes'>Let me talk about myself</h2>
+          <p className='AboutDesp'>
+            I'm a student that is heavily intrested in the CS/Finanical
+            sector. I'm also a current Computer science and Economics major
+            at Boston University, class of 2027.
+          </p>
         </div>
 
         <div id="Resume" className="block">
