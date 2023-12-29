@@ -5,7 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import Box from '@mui/material/Box';
 
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -16,6 +16,7 @@ import Box from '@mui/material/Box';
 export default function Home() {
   return (
     <main>
+      <SpeedInsights/>
       <Image
         id='Bgs'
         className='Bg'
