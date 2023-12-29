@@ -1,4 +1,17 @@
 import Image from 'next/image'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import Box from '@mui/material/Box';
+
+
+
+
+
+
+
+
 
 export default function Home() {
   return (
@@ -7,7 +20,7 @@ export default function Home() {
         id='Bgs'
         className='Bg'
           src="/IMG_1004.img"
-          width={1728}
+          width={1800}
           height={1117}
           alt='/image/IMG_1004.jpg'
         
@@ -25,11 +38,8 @@ export default function Home() {
             </div>
           <hr/>
         </div>
-        
-        
 
-          
-
+        <div className=''>
           <div id="Mids">
             <h1 className="Name">Joey Lam</h1>
           </div>
@@ -46,21 +56,84 @@ export default function Home() {
             </div>
           </div>
           
-          <div className='Socials'>
-
+          <div className='Socials mt-5'>
+            <div>
+              <a href='https://www.instagram.com/joeulamb/'><InstagramIcon className='mr-5' 
+              sx={{ color: 'white',
+                    width: '5%', 
+                    height: '5%',
+                    transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
+                    ":hover": {
+                      transform: "scale3d(1.2, 1.2, 1)",
+                      color: "#2A9D8F",
+                    }
+                  }}/>
+                </a>
+            </div>
+            <div><a href='https://www.linkedin.com/in/joey-lam-89057021b/'>
+              <LinkedInIcon className='mr-5' 
+                sx={{ color: 'white',
+                      width: '5%', 
+                      height: '5%',
+                      transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
+                    ":hover": {
+                      transform: "scale3d(1.2, 1.2, 1)",
+                      color: "#2A9D8F",
+                    }
+                  }}/>
+              </a>
+            </div>
+            <div><a href='mailto:joey.lamm@outlook.com'>
+              <EmailIcon 
+              sx={{ color: 'white',
+                      width: '5%', 
+                      height: '5%',
+                      transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
+                    ":hover": {
+                      transform: "scale3d(1.2, 1.2, 1)",
+                      color: "#2A9D8F",
+                    }
+                  }}/>
+                  </a>
+            </div>
+          
           </div>
-
-
-
+          <Box>
+            <a href='#About'>
+              <ExpandCircleDownIcon className="arrow_down duration-700"
+              sx={{ color: 'white',
+                    width: '5%', 
+                    height: '5%',
+                    transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
+                    ":hover": {
+                      transform: "scale3d(1.5, 1.5, 1)",
+                      color: "#F4A261",
+                    }
+                    }
+                  }
+                />
+            </a>
+          </Box>
+        </div>
 
         <div id="About" className="block">
           <h1 className='AboutTitle'>About</h1>
           <h2 className='AboutDes'>Let me talk about myself</h2>
-          <p className='AboutDesp'>
+          <div>
+            <Image
+              src="/IMG_1004.img"
+              width={300}
+              height={300}
+              alt='/image/IMG_1004.jpg'
+            
+            />
+            <p className='AboutDesp'>
             I'm a student that is heavily intrested in the CS/Finanical
             sector. I'm also a current Computer science and Economics major
             at Boston University, class of 2027.
           </p>
+          </div>
+          
         </div>
 
         <div id="Resume" className="block">
