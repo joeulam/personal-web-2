@@ -5,6 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
+import LinearProgress from '@mui/material-next/LinearProgress';
+
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
@@ -122,20 +124,75 @@ export default function Home() {
         </div>
 
         <div id="About" className="block">
-          <h1 className='AboutTitle'>About</h1>
-          <h2 className='AboutDes'>Let me talk about myself</h2>
-          <div className='mt-20'>
-            <div className='inline-block avatar' >
-              <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ width: '30%', height: '30%' }}/>
+          <h1 className='AboutTitle'>About me</h1>
+          <div className='mt-20 photoBlock'>
+            <div className='avatar mb-10'>
+              <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ width: '20%', height: '20%' }}/>
+            </div>
+            <div>
+              <p className='AboutDesp'>
+                I'm a student that is heavily intrested in the CS/Finanical
+                sector. I'm also a current Computer science and Economics major
+                at Boston University, class of 2027.
+              </p>
+            </div>
+          </div>
+
+
+          <div>
+            <div className='SkillsBlock'>
+              <h2>Skills</h2>
+              <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
+              
+              
+              <div className='ml-20'>
+                <div>
+                  MS Suite
+                  <Box sx={{ color:"black", width: 500 , height: 10 }}>
+                    <LinearProgress value={90} variant="determinate" />
+                  </Box>
+                </div>
+                
+
+                <div>
+                  Python
+                  <Box sx={{ width: 500 , height: 10 }}>
+                    <LinearProgress value={70} variant="determinate" />
+                  </Box>
+                </div>
+
+
+                <div>
+                  JS/TS/React
+                  <Box sx={{ width: 500 , height: 10 }}>
+                    <LinearProgress value={50} variant="determinate" />
+                  </Box>
+                </div>
+
+
+                <div>
+                  Java
+                  <Box sx={{ width: 500 , height: 10 }}>
+                    <LinearProgress value={30} variant="determinate" />
+                  </Box>
+                </div>
+
+
+                <div>
+                  C++
+                  <Box sx={{ width: 500 , height: 10 }}>
+                    <LinearProgress value={20} variant="determinate" />
+                  </Box>
+                </div>
+              </div>
             </div>
 
-            <p className='AboutDesp inline-block'>
-              I'm a student that is heavily intrested in the CS/Finanical
-              sector. I'm also a current Computer science and Economics major
-              at Boston University, class of 2027.
-          </p>
+
+            <div>
+              <h2>Profile</h2>
+              <p>Currently looking for a internship. If you think I'm a good fit, please contant me via joey.lamm@outlook.com.</p>
+            </div>
           </div>
-          
         </div>
 
         <div id="Resume" className="block">

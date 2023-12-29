@@ -120,20 +120,23 @@
   margin-left: 46vw;
 }
 
-.AboutDes{
-  font-size: 24px;
-  color: #fdf0d5;
-  margin-left: 40vw;
-}
 
 .AboutDesp{
   font-size: 16px;
   color: #fdf0d5;
   width: 30vw;
-  margin-left: -20vw;
-  margin-top: -10vh;
 }
 
 .avatar{
-  margin-left: 30vw;
+  margin-left: 10vw;
 }
+
+.photoBlock{
+  margin-left: 33vw;
+
+}
+
+.SkillsBlock{
+  
+}
+
