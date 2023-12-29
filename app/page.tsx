@@ -69,6 +69,7 @@ export default function Home() {
               sx={{ color: 'white',
                     width: '5%', 
                     height: '5%',
+                    zIndex:'5',
                     transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
                     ":hover": {
                       transform: "scale3d(1.2, 1.2, 1)",
@@ -82,6 +83,7 @@ export default function Home() {
                 sx={{ color: 'white',
                       width: '5%', 
                       height: '5%',
+                      zIndex:'5',
                       transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
                     ":hover": {
                       transform: "scale3d(1.2, 1.2, 1)",
@@ -95,6 +97,7 @@ export default function Home() {
               sx={{ color: 'white',
                       width: '5%', 
                       height: '5%',
+                      zIndex:'5',
                       transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
                     ":hover": {
                       transform: "scale3d(1.2, 1.2, 1)",
@@ -111,6 +114,7 @@ export default function Home() {
               sx={{ color: 'white',
                     width: '5%', 
                     height: '5%',
+                    zIndex:'5',
                     transition: 'transform 0.5s, color 0.5s', // Set the desired transition properties and duration
                     ":hover": {
                       transform: "scale3d(1.5, 1.5, 1)",
@@ -127,7 +131,7 @@ export default function Home() {
           <h1 className='AboutTitle'>About me</h1>
           <div className='mt-20 photoBlock'>
             <div className='avatar mb-10'>
-              <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ width: '20%', height: '20%' }}/>
+              <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ zIndex:'5', width: '20%', height: '20%' }}/>
             </div>
             <div>
               <p className='AboutDesp'>
@@ -145,10 +149,10 @@ export default function Home() {
               <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
               
               
-              <div className='ml-20'>
+              <div className='ml-20 '>
                 <div>
                   MS Suite
-                  <Box sx={{ color:"black", width: 500 , height: 10 }}>
+                  <Box sx={{ zIndex:'5', color:"black", width: 500 , height: 10 }}>
                     <LinearProgress value={90} variant="determinate" />
                   </Box>
                 </div>
@@ -156,7 +160,7 @@ export default function Home() {
 
                 <div>
                   Python
-                  <Box sx={{ width: 500 , height: 10 }}>
+                  <Box sx={{ zIndex:'5', width: 500 , height: 10 }}>
                     <LinearProgress value={70} variant="determinate" />
                   </Box>
                 </div>
@@ -164,7 +168,7 @@ export default function Home() {
 
                 <div>
                   JS/TS/React
-                  <Box sx={{ width: 500 , height: 10 }}>
+                  <Box sx={{ zIndex:'5', width: 500 , height: 10 }}>
                     <LinearProgress value={50} variant="determinate" />
                   </Box>
                 </div>
@@ -172,7 +176,7 @@ export default function Home() {
 
                 <div>
                   Java
-                  <Box sx={{ width: 500 , height: 10 }}>
+                  <Box sx={{ zIndex:'5', width: 500 , height: 10 }}>
                     <LinearProgress value={30} variant="determinate" />
                   </Box>
                 </div>
@@ -180,7 +184,7 @@ export default function Home() {
 
                 <div>
                   C++
-                  <Box sx={{ width: 500 , height: 10 }}>
+                  <Box sx={{ zIndex:'5', width: 500 , height: 10 }}>
                     <LinearProgress value={20} variant="determinate" />
                   </Box>
                 </div>
@@ -188,7 +192,7 @@ export default function Home() {
             </div>
 
 
-            <div>
+            <div className='SkillsBlock'>
               <h2>Profile</h2>
               <p>Currently looking for a internship. If you think I'm a good fit, please contant me via joey.lamm@outlook.com.</p>
             </div>
