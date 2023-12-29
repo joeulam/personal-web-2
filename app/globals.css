@@ -13,7 +13,7 @@
   margin-right: auto;
   margin-top: 2vh;
   margin-bottom: 2vh;
-  z-index: 100;
+  z-index: 9999;
   color:white ;
 
 }
@@ -27,14 +27,14 @@
 }
 
 
-.sticky{
+.stickys{
   position: sticky;
   top: 0;
   padding-top: 1vh;
   backdrop-filter: blur(10px);
 }
 
-.sticky hr{
+.stickys hr{
   width: 45vw;
   margin:0 auto;
 
@@ -136,7 +136,29 @@
 
 }
 
+
+
+
 .SkillsBlock{
-  color:#fdf0d5;
+  margin-left: 15vw;
 }
 
+.SkillsBlock h2{
+  font-size: 32px;
+}
+
+.SkillsBlock hr{
+  margin-bottom: 3vh;
+}
+
+.SkillsBlockL{
+  color:#fdf0d5;
+  display: inline-block;
+  width: 20vw;
+}
+
+.SkillsBlockR{
+  color:#fdf0d5;
+  display: inline-block;
+  width: 31vw;
+}
