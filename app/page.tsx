@@ -6,6 +6,7 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import Box from '@mui/material/Box';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -17,6 +18,8 @@ export default function Home() {
   return (
     <main>
       <SpeedInsights/>
+      <Analytics />
+
       <Image
         id='Bgs'
         className='Bg'
