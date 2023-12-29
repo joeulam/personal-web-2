@@ -130,5 +130,10 @@
   font-size: 16px;
   color: #fdf0d5;
   width: 30vw;
+  margin-left: -20vw;
+  margin-top: -10vh;
 }
 
+.avatar{
+  margin-left: 30vw;
+}

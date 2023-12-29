@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
@@ -123,18 +124,15 @@ export default function Home() {
         <div id="About" className="block">
           <h1 className='AboutTitle'>About</h1>
           <h2 className='AboutDes'>Let me talk about myself</h2>
-          <div>
-            <Image
-              src="/IMG_1004.img"
-              width={300}
-              height={300}
-              alt='/image/IMG_1004.jpg'
-            
-            />
-            <p className='AboutDesp'>
-            I'm a student that is heavily intrested in the CS/Finanical
-            sector. I'm also a current Computer science and Economics major
-            at Boston University, class of 2027.
+          <div className='mt-20'>
+            <div className='inline-block avatar' >
+              <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ width: '30%', height: '30%' }}/>
+            </div>
+
+            <p className='AboutDesp inline-block'>
+              I'm a student that is heavily intrested in the CS/Finanical
+              sector. I'm also a current Computer science and Economics major
+              at Boston University, class of 2027.
           </p>
           </div>
           
