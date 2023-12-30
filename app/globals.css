@@ -172,3 +172,23 @@
 .Resume h3{
   font-size: 20px;
 }
+
+
+
+
+.pulse {
+  animation-delay: .5s;
+  animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 1px rgb(136, 230, 127);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgb(136, 230, 127);
+  }
+}
+
+
+

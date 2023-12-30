@@ -7,6 +7,11 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import LinearProgress from '@mui/material-next/LinearProgress';
 import Timelines from './timeline';
+import Timelines2 from './timeline2';
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
@@ -242,15 +247,46 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="Resume" className="Resume h-[100vh] bg-[#0A0F2B]">
+        <div id="Resume" className="Resume h-[150vh] bg-[#0A0F2B]">
           <h1 className='text-[#fdf0d5] ml-[45vw] pt-20'>Resume</h1>
           <h3 className='text-[#fdf0d5] ml-[43vw] mt-5' >My work exprience</h3>
-          <Timelines/>
+          <div className="ml-[-3vw] mt-5">
+            <Timelines/>
+          </div>
+
+          <div className="ml-[-3vw] mt-10">
+              <h1 className='text-[#fdf0d5] ml-[42vw] mt-5'>Educational History</h1>
+              <Timelines2/>
+          </div>
 
         </div>
 
         <div id="Projects" className="block">
           <h1>Projects</h1>
+          <Grid container spacing={2}>
+            <Grid xs={4}>
+              <Card>
+                <CardContent>
+                  
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid xs={4}>
+              <Card>
+                My Personal website v3
+              </Card>
+            </Grid>
+            <Grid xs={4}>
+              <Card>
+                My Personal website v3
+              </Card>
+            </Grid>
+            <Grid xs={4}>
+              <Card>
+                My Personal website v3
+              </Card>
+            </Grid>
+          </Grid>
         </div>
 
         <div id="Contact" className="">
