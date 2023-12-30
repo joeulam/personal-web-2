@@ -22,7 +22,7 @@ export default function Home() {
     <main>
       <SpeedInsights/>
       <Analytics />
-
+      
       <Image
         id='Bgs'
         className='Bg'
@@ -33,8 +33,6 @@ export default function Home() {
         
         
         />
-
-
         <div className="stickys">
           <div className="header grid gap-4 content-center">
               <ul>
@@ -47,6 +45,8 @@ export default function Home() {
             </div>
           <hr/>
         </div>
+
+        
 
 
 
@@ -151,10 +151,12 @@ export default function Home() {
 
 
           <div className='z-[1] SkillsBlock relative ml-40 mt-20'>
-            <div className='SkillsBlockL absolute left-40 top-0'>
+              <div className='SkillsBlockL absolute left-40 top-0'>
                 <h2>Profile</h2>
                 <hr className='w-[20vw]'/>
-                <p>Currently looking for a internship. If you think I'm a good fit, please contant me via joey.lamm@outlook.com.</p>
+                <p>Currently looking for a internship. If you think I'm a good fit, please contant me via <a className="hover:text-[#BF40BF]" href='mailto:joey.lamm@outlook.com'>joey.lamm@outlook.com</a>.</p>
+              
+              
               </div>
 
               <div className='SkillsBlockR absolute mr-20 right-60'>
@@ -163,7 +165,7 @@ export default function Home() {
                 <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
                 
                 
-                <div className=''>
+                <div>
                   <div>
                     <div>
                       MS Suite
@@ -240,7 +242,8 @@ export default function Home() {
         </div>
 
         <div id="Resume" className="h-[100vh] bg-[#0A0F2B]">
-          <h1>Resume</h1>
+          <h1 className='text-[#fdf0d5]'>Resume</h1>
+          <h3 className='text-[#fdf0d5]'>My work exprience</h3>
 
         </div>
 
@@ -257,6 +260,7 @@ export default function Home() {
 
         </footer>
       </div>
+     
     </main>
   )
 }
