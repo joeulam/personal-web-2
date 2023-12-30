@@ -6,7 +6,7 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import LinearProgress from '@mui/material-next/LinearProgress';
-
+import Timelines from './timeline';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
@@ -245,7 +245,7 @@ export default function Home() {
         <div id="Resume" className="Resume h-[100vh] bg-[#0A0F2B]">
           <h1 className='text-[#fdf0d5] ml-[45vw] pt-20'>Resume</h1>
           <h3 className='text-[#fdf0d5] ml-[43vw] mt-5' >My work exprience</h3>
-
+          <Timelines/>
 
         </div>
 
