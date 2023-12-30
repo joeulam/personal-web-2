@@ -17,6 +17,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 
 
+
 export default function Home() {
   return (
     <main>
@@ -241,9 +242,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="Resume" className="h-[100vh] bg-[#0A0F2B]">
-          <h1 className='text-[#fdf0d5]'>Resume</h1>
-          <h3 className='text-[#fdf0d5]'>My work exprience</h3>
+        <div id="Resume" className="Resume h-[100vh] bg-[#0A0F2B]">
+          <h1 className='text-[#fdf0d5] ml-[45vw] pt-20'>Resume</h1>
+          <h3 className='text-[#fdf0d5] ml-[43vw] mt-5' >My work exprience</h3>
+
 
         </div>
 

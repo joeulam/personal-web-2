@@ -162,3 +162,13 @@
   display: inline-block;
   width: 31vw;
 }
+
+
+/*-------- Resume block --------*/
+.Resume h1{
+  font-size: 32px;
+}
+
+.Resume h3{
+  font-size: 20px;
+}
