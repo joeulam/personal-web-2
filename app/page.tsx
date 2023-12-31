@@ -263,7 +263,7 @@ export default function Home() {
 
         <div id="Projects" className="block">
           <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
-          <Grid className='ml-10 mr-10' container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+          <Grid className='ml-20 mr-20' container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
             <Grid xs={4}>
               <Card className='container'>
                     <Image
