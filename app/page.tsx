@@ -277,12 +277,22 @@ export default function Home() {
             </Grid>
             <Grid xs={4}>
               <Card>
-                My Personal website v3
+                <Image
+                  src="/photoweb.png"
+                  width={1800}
+                  height={1117}
+                  alt='/'
+                />
               </Card>
             </Grid>
             <Grid xs={4}>
               <Card>
-                My Personal website v3
+                <Image
+                    src="/algo.png"
+                    width={1800}
+                    height={1117}
+                    alt='/'
+                  />
               </Card>
             </Grid>
             <Grid xs={4}>
