@@ -32,7 +32,7 @@ export default function Home() {
       <Image
         id='Bgs'
         className='Bg'
-          src="/IMG_1004.img"
+          src="/IMG_1695.jpg"
           width={1800}
           height={1117}
           alt='/image/IMG_1004.jpg'
@@ -266,9 +266,13 @@ export default function Home() {
           <Grid container spacing={2}>
             <Grid xs={4}>
               <Card>
-                <CardContent>
-                  
-                </CardContent>
+                  <Image
+                    src="/website.png"
+                    width={1800}
+                    height={1117}
+                    alt='/'
+                  />
+
               </Card>
             </Grid>
             <Grid xs={4}>
