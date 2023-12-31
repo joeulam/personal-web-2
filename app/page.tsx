@@ -11,7 +11,7 @@ import Timelines2 from './timeline2';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-
+import AddIcon from '@mui/icons-material/Add';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
@@ -57,7 +57,7 @@ export default function Home() {
 
 
 
-        <div className=''>
+        <div>
           <div id="Mids">
             <h1 className="Name">Joey Lam</h1>
           </div>
@@ -262,44 +262,70 @@ export default function Home() {
         </div>
 
         <div id="Projects" className="block">
-          <h1>Projects</h1>
-          <Grid container spacing={2}>
+          <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
+          <Grid className='ml-10 mr-10' container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
             <Grid xs={4}>
-              <Card>
-                  <Image
-                    src="/website.png"
-                    width={1800}
-                    height={1117}
-                    alt='/'
-                  />
+              <Card className='container'>
+                    <Image
+                      src="/website.png"
+                      width={1800}
+                      height={1117}
+                      alt='/'
+                    />
+                    <div className='overlay'>
+                      <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                    </div>
 
               </Card>
             </Grid>
+
+
+
             <Grid xs={4}>
-              <Card>
+              <Card className='container'>
                 <Image
                   src="/photoweb.png"
                   width={1800}
                   height={1117}
                   alt='/'
                 />
+                <div className='overlay'>
+                  <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                </div>
               </Card>
             </Grid>
+
+
             <Grid xs={4}>
-              <Card>
+              <Card className='container'>
                 <Image
                     src="/algo.png"
                     width={1800}
                     height={1117}
                     alt='/'
                   />
+                <div className='overlay'>
+                    <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                </div>
               </Card>
             </Grid>
+
+
             <Grid xs={4}>
-              <Card>
-                My Personal website v3
+              <Card className='container'>
+                <Image
+                      src="/heyo.web.png"
+                      width={1800}
+                      height={1117}
+                      alt='/'
+                    />
+                <div className='overlay'>
+                  <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                </div>
               </Card>
+              
             </Grid>
+
           </Grid>
         </div>
 
