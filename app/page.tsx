@@ -19,10 +19,6 @@ import { Analytics } from '@vercel/analytics/react';
 
 
 
-
-
-
-
 export default function Home() {
   return (
     <main>
@@ -267,88 +263,91 @@ export default function Home() {
 
         <div id="Projects" className="block">
           <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
-          <Grid className='ml-20 mr-20' container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
-            <Grid xs={4}>
-              <Card className='container'>
-                    <Image
-                      src="/website.png"
-                      width={1800}
-                      height={1117}
-                      alt='/'
-                    />
-                    <div className='overlay'>
-                      <div className='text'>
-                        <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>My personal website</h3>
-                        <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, and MUI</p>
-                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my acomplishments</p>
+          <div className='ml-20 mr-20'>
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+              <Grid xs={4}>
+                <Card className='container'>
+                      <Image
+                        src="/website.png"
+                        width={1800}
+                        height={1117}
+                        alt='/'
+                      />
+                      <div className='overlay'>
+                        <div className='text'>
+                          <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>My personal website</h3>
+                          <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, and MUI</p>
+                          <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my acomplishments</p>
+                        </div>
                       </div>
-                    </div>
 
-              </Card>
-            </Grid>
-
+                </Card>
+              </Grid>
 
 
-            <Grid xs={4}>
-              <Card className='container'>
-                <Image
-                  src="/photoweb.png"
-                  width={1800}
-                  height={1117}
-                  alt='/'
-                />
-                <div className='overlay'>
-                      <div className='text'>
-                        <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Photography website</h3>
-                        <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, CSSTailwind, MUI, and Framer motion</p>
-                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to host my photography photos</p>
-                      </div>
-                    </div>
-              </Card>
-            </Grid>
 
-
-            <Grid xs={4}>
-              <Card className='container'>
-                <Image
-                    src="/algo.png"
+              <Grid xs={4}>
+                <Card className='container'>
+                  <Image
+                    src="/photoweb.png"
                     width={1800}
                     height={1117}
                     alt='/'
                   />
-                <div className='overlay'>
-                  <div className='text'>
-                    <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Algo.v1</h3>
-                    <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Python, Alpaca API, yfinance, Websocket and Pandas</p>
-                    <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created a trading algorithm that took data from Yahoo finance and used Alpaca to execute the trades</p>
+                  <div className='overlay'>
+                        <div className='text'>
+                          <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Photography website</h3>
+                          <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, CSSTailwind, MUI, and Framer motion</p>
+                          <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to host my photography photos</p>
+                        </div>
+                      </div>
+                </Card>
+              </Grid>
 
-                  </div>
-                </div>
-              </Card>
-            </Grid>
 
-
-            <Grid xs={4}>
-              <Card className='container'>
-                <Image
-                      src="/heyo.web.png"
+              <Grid xs={4}>
+                <Card className='container'>
+                  <Image
+                      src="/algo.png"
                       width={1800}
                       height={1117}
                       alt='/'
                     />
-                <div className='overlay'>
-                  <div className='text'>
-                    <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Heyo</h3>
-                    <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Electron.js, CSS, HTML, and postgresql</p>
-                    <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created during the height of Covid-19. Its an application that allows users to rate their feelings and write down hows their day </p>
+                  <div className='overlay'>
+                    <div className='text'>
+                      <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Algo.v1</h3>
+                      <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Python, Alpaca API, yfinance, Websocket and Pandas</p>
+                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created a trading algorithm that took data from Yahoo finance and used Alpaca to execute the trades</p>
 
+                    </div>
                   </div>
-                </div>
-              </Card>
-              
-            </Grid>
+                </Card>
+              </Grid>
 
-          </Grid>
+
+              <Grid xs={4}>
+                <Card className='container'>
+                  <Image
+                        src="/heyo.web.png"
+                        width={1800}
+                        height={1117}
+                        alt='/'
+                      />
+                  <div className='overlay'>
+                    <div className='text'>
+                      <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Heyo</h3>
+                      <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Electron.js, CSS, HTML, and postgresql</p>
+                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created during the height of Covid-19. Its an application that allows users to rate their feelings and write down hows their day </p>
+
+                    </div>
+                  </div>
+                </Card>
+                
+              </Grid>
+
+            </Grid>
+          </div>
+          
         </div>
       <div>
         <footer>

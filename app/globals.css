@@ -7,6 +7,10 @@
 *{
   scroll-behavior:smooth
 }
+
+
+
+
 /* ----------- Header Info -------------*/
 .header{
   margin-left: 26vw;
@@ -39,6 +43,7 @@
 .stickys hr{
   width: 45vw;
   margin:0 auto;
+  transition: 1s;
 
 }
 
