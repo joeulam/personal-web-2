@@ -46,7 +46,7 @@ export default function Home() {
                 <li><a href="#About">About</a></li>
                 <li><a href="#Resume">Resume</a></li>
                 <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
+                <li><a href='https://github.com/joeulam'>Github</a></li>
               </ul>
             </div>
           <hr/>
@@ -161,7 +161,11 @@ export default function Home() {
                 <h2>Profile</h2>
                 <hr className='w-[20vw]'/>
                 <p>Currently looking for a internship. If you think I'm a good fit, please contant me via <a className="hover:text-[#BF40BF]" href='mailto:joey.lamm@outlook.com'>joey.lamm@outlook.com</a>.</p>
-              
+                
+                <div className='cv'>
+                  <a href="/cv.pdf" download="Joey Lam CV">Download my CV</a>
+                </div>
+
               
               </div>
 
@@ -273,7 +277,11 @@ export default function Home() {
                       alt='/'
                     />
                     <div className='overlay'>
-                      <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                      <div className='text'>
+                        <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>My personal website</h3>
+                        <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, and MUI</p>
+                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my acomplishments</p>
+                      </div>
                     </div>
 
               </Card>
@@ -290,8 +298,12 @@ export default function Home() {
                   alt='/'
                 />
                 <div className='overlay'>
-                  <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
-                </div>
+                      <div className='text'>
+                        <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Photography website</h3>
+                        <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, CSSTailwind, MUI, and Framer motion</p>
+                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to host my photography photos</p>
+                      </div>
+                    </div>
               </Card>
             </Grid>
 
@@ -305,7 +317,12 @@ export default function Home() {
                     alt='/'
                   />
                 <div className='overlay'>
-                    <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                  <div className='text'>
+                    <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Algo.v1</h3>
+                    <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Python, Alpaca API, yfinance, Websocket and Pandas</p>
+                    <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created a trading algorithm that took data from Yahoo finance and used Alpaca to execute the trades</p>
+
+                  </div>
                 </div>
               </Card>
             </Grid>
@@ -320,7 +337,12 @@ export default function Home() {
                       alt='/'
                     />
                 <div className='overlay'>
-                  <AddIcon className='text' sx={{fontSize:40,position:"absolute",zIndex:"4"}}/>
+                  <div className='text'>
+                    <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Heyo</h3>
+                    <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Electron.js, CSS, HTML, and postgresql</p>
+                    <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created during the height of Covid-19. Its an application that allows users to rate their feelings and write down hows their day </p>
+
+                  </div>
                 </div>
               </Card>
               
@@ -328,14 +350,11 @@ export default function Home() {
 
           </Grid>
         </div>
-
-        <div id="Contact" className="">
-          <h1>Contact</h1>
-        </div>
-      
       <div>
         <footer>
-
+          <div className='h-10 pl-20 pt-3 bg-[#1b263b] '>
+            <p className='text-[#0A0F2B]'>© Copyright 2023 Joey Lam</p>
+          </div>
         </footer>
       </div>
      

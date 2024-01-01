@@ -211,13 +211,24 @@
 .container:hover .overlay {
   opacity: 1;
 }
+
 .text {
-  color: white;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-align: center;
+}
+
+.cv{
+  background-color: rgb(52, 119, 52);
+  margin-top: 5vh;
+  width: fit-content;
+  padding: 3%;
+  transition: 1s;
+}
+
+.cv:hover{
+  filter: brightness(70%);
 }
