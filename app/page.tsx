@@ -324,6 +324,25 @@ export default function Home() {
                 </Card>
               </Grid>
 
+              <Grid xs={4}>
+                <Card className='container'>
+                  <Image
+                        src="/websitev1.png"
+                        width={1800}
+                        height={1117}
+                        alt='/'
+                      />
+                  <div className='overlay'>
+                    <div className='text'>
+                    <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Personal website V1</h3>
+                          <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs and csstailwind</p>
+                          <p className='text-[16px] text-[#fdf0d5] w-[100%]'>My first iteration for a personal website</p>
+
+                    </div>
+                  </div>
+                </Card>
+                
+              </Grid>
 
               <Grid xs={4}>
                 <Card className='container'>
