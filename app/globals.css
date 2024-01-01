@@ -24,6 +24,7 @@
 .header li{
   margin-left: 5vw;
   display: inline-block;
+  transition: 1s;
 }
 
 
@@ -41,6 +42,10 @@
 
 }
 
+
+.stickys li:hover{
+  color: rgba(214, 212, 212, 0.459);
+}
 /* ----------- Name/First block info -------------*/
 
 
