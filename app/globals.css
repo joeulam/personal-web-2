@@ -32,6 +32,7 @@
   top: 0;
   padding-top: 1vh;
   backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .stickys hr{
