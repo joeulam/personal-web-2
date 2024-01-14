@@ -36,16 +36,16 @@ export default function Home() {
         
         />
         <div className="stickys">
-          <div className="header grid gap-4 content-center">
-              <ul>
-                <li><a href="#Bgs">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Resume">Resume</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href='https://github.com/joeulam'>Github</a></li>
+          <div className="text-center header grid gap-4 content-center">
+              <ul className=''>
+                <li className='mx-2 sm:mx-5'><a href="#Bgs">Home</a></li>
+                <li className='mx-2 sm:mx-5'><a href="#About">About</a></li>
+                <li className='mx-2 sm:mx-5'><a href="#Resume">Resume</a></li>
+                <li className='mx-2 sm:mx-5'><a href="#Projects">Projects</a></li>
+                <li className='mx-2 sm:mx-5'><a href='https://github.com/joeulam'>Github</a></li>
               </ul>
             </div>
-          <hr/>
+          <hr className='w-5/6 lg:w-{20vw}'/>
         </div>
 
         
@@ -55,17 +55,17 @@ export default function Home() {
 
         <div>
           <div id="Mids">
-            <h1 className="Name">Joey Lam</h1>
+            <h1 className="text-center mt-[30vh] block text-[#fdf0d5] text-[48px] lg:text-[64px]">Joey Lam</h1>
           </div>
 
-          <div className="Descdes">
-            <div className="Desc">
+          <div className="text-center text-[#fdf0d5]">
+            <div className="mx-2 sm:mx-5 inline">
               Student
             </div>
-            <div className="Desc">
+            <div className="mx-2 sm:mx-5 inline">
               Software Engineer
             </div>
-            <div className="Desc">
+            <div className="mx-2 sm:mx-5 inline">
               Inventor
             </div>
           </div>

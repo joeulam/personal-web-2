@@ -13,7 +13,6 @@
 
 /* ----------- Header Info -------------*/
 .header{
-  margin-left: 26vw;
   margin-right: auto;
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -26,7 +25,6 @@
 }
 
 .header li{
-  margin-left: 5vw;
   display: inline-block;
   transition: 1s;
 }
@@ -41,10 +39,8 @@
 }
 
 .stickys hr{
-  width: 45vw;
   margin:0 auto;
   transition: 1s;
-
 }
 
 
@@ -54,22 +50,10 @@
 /* ----------- Name/First block info -------------*/
 
 
-#Mids{
-  margin-top: 23vh;
-}
 
 
-.Name{
-  display: block;
-  font-size: 64px;
-  margin-bottom: 5vh;
-  margin-left: 40vw;
-  color:#fdf0d5;
 
-}
-
-
-.block{
+.blocks{
   height: 100vh;
   width: 100vw;
   background-color: #003049;
@@ -79,19 +63,9 @@
 
 .Descdes{
   height: 5vh;
-  width: 40vw;
-  margin-left: 32%;
-  margin-right: 35%;
-  color:#fdf0d5 ;
-
 }
 
-.Desc{
-  display: inline-block;
-  margin-left: 3vw;
-  margin-right: 3vw;
-  top: -25px;
-}
+
 
 .Socials{
   margin-bottom: 38.5vh;
@@ -104,8 +78,8 @@
 }
 
 .Bg{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   z-index: -10;
   position: absolute;
 }
