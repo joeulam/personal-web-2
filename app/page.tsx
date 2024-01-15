@@ -45,7 +45,7 @@ export default function Home() {
                 <li className='mx-2 sm:mx-5'><a href='https://github.com/joeulam'>Github</a></li>
               </ul>
             </div>
-          <hr className='w-5/6 lg:w-{20vw}'/>
+          <hr className='w-1/2 lg:w-{20vw}'/>
         </div>
 
         
