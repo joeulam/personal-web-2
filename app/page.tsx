@@ -261,7 +261,7 @@ export default function Home() {
 
         </div>
 
-        <div id="Projects" className="block">
+        <div id="Projects" className="block bg-[#0A0F2B]">
           <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
           <div className='ml-20 mr-20'>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
