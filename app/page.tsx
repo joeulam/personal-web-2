@@ -261,7 +261,7 @@ export default function Home() {
 
         </div>
 
-        <div id="Projects" className="block bg-[#0A0F2B]">
+        <div id="Projects" className="block bg-[#0A0F2B] pb-[10vh]">
           <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
           <div className='ml-20 mr-20'>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
@@ -370,8 +370,8 @@ export default function Home() {
         </div>
       <div>
         <footer>
-          <div className='h-10 pl-20 pt-3 bg-[#1b263b] '>
-            <p className='text-[#0A0F2B]'>© Copyright 2023 Joey Lam</p>
+          <div className='h-[10vh] pl-20 pb-3 pt-8 bg-[#1b263b] '>
+            <p className='text-[#DEDBDA]'>© Copyright 2023 Joey Lam</p>
           </div>
         </footer>
       </div>
