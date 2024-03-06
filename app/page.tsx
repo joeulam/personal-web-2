@@ -134,7 +134,7 @@ export default function Home() {
           </Box>
         </div>
 
-        <div id="About" className="h-[140vh] bg-[#03071e]">
+        <div id="About" className="h-[160vh] bg-[#03071e]">
           <h1 className='AboutTitle'>About me</h1>
           <div className='mt-20 photoBlock'>
             <div className='avatar mb-10'>
@@ -173,7 +173,7 @@ export default function Home() {
                 
                 <div>
                   <div>
-                    <div>
+                    <div className="mt-5">
                       MS Suite
                     </div>
                     <div className='inline-block'>
@@ -181,13 +181,16 @@ export default function Home() {
                         <LinearProgress value={90} variant="determinate" />
                       </Box>
                     </div>
-                    <p className='inline-block ml-5'>90%</p>
+
+                    <div>
+                      <p className='inline-block'>90%</p>
+                    </div>
 
                   </div>
                   
 
                   <div>
-                    <div>
+                    <div className="mt-5">
                       Python
                     </div>
                     <div className='inline-block'>
@@ -195,13 +198,14 @@ export default function Home() {
                         <LinearProgress value={88} variant="determinate" />
                       </Box>
                     </div>
-                    <p className='inline-block ml-5'>88%</p>
-
+                    <div>
+                       <p className='inline-block'>88%</p>
+                    </div>
                   </div>
 
 
                   <div>
-                    <div>
+                    <div className="mt-5">
                       JS/TS/React
                     </div>
                     <div className='inline-block'>
@@ -209,13 +213,14 @@ export default function Home() {
                         <LinearProgress value={77} variant="determinate" />
                       </Box>
                     </div>
-                    <p className='inline-block ml-5'>77%</p>
-
+                    <div>
+                      <p className='inline-block'>77%</p>
+                    </div>
                   </div>
 
 
                   <div>
-                    <div>
+                    <div className="mt-5">
                       Java
                     </div>
                     <div className='inline-block'>
@@ -223,12 +228,13 @@ export default function Home() {
                         <LinearProgress value={67} variant="determinate" />
                       </Box>
                     </div>
-                    <p className='inline-block ml-5'>67%</p>
-
+                    <div>
+                      <p className='inline-block'>67%</p>
+                    </div>
                   </div>
 
                   <div>
-                    <div>
+                    <div className="mt-5">
                       C++
                     </div>
                     <div className='inline-block'>
@@ -236,14 +242,12 @@ export default function Home() {
                         <LinearProgress value={56} variant="determinate" />
                       </Box>
                     </div>
-                    <p className='inline-block ml-5'>56%</p>
-
+                    <div>
+                      <p className='inline-block'>56%</p>
+                    </div>
                   </div>
               </div>
             </div>
-
-
-            
           </div>
         </div>
 
