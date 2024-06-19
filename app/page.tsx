@@ -135,7 +135,7 @@ export default function Home() {
           </Box>
         </div>
         </div>
-        <div id="About" className="h-[140vh] bg-[#03071e]">
+        <div id="About" className="h-[170vh] bg-[#03071e]">
           <h1 className='AboutTitle pt-[20vh]'>About me</h1>
           <div className='mt-20 photoBlock'>
             <div className='avatar mb-10'>
@@ -172,7 +172,7 @@ export default function Home() {
                 <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
                 
                 
-                <div>
+                <div >
                   <div>
                     <div className="mt-5">
                       MS Suite
@@ -266,9 +266,10 @@ export default function Home() {
         </div>
 
         
-        <div id="Projects" className="block">
-          <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[40vh]'>Projects</h1>
-          <div className='ml-20 mr-20'>
+        <div className="block pt-[40vh]">
+          <h1 className='text-[32px] text-white ml-[45vw] mb-[5vh] '>Projects</h1>
+
+          <div id="Projects" className='ml-20 mr-20 '>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
               <Grid xs={4}>
                 <Card className='container'>
@@ -288,7 +289,6 @@ export default function Home() {
 
                 </Card>
               </Grid>
-
 
 
               <Grid xs={4}>
