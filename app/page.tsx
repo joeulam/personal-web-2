@@ -53,7 +53,8 @@ export default function Home() {
 
 
 
-        <div>
+        <div >
+          <div className='h-[60vh]'>
           <div id="Mids">
             <h1 className="text-center mt-[30vh] block text-[#fdf0d5] text-[48px] lg:text-[64px]">Joey Lam</h1>
           </div>
@@ -133,9 +134,9 @@ export default function Home() {
             </a>
           </Box>
         </div>
-
+        </div>
         <div id="About" className="h-[140vh] bg-[#03071e]">
-          <h1 className='AboutTitle'>About me</h1>
+          <h1 className='AboutTitle pt-[20vh]'>About me</h1>
           <div className='mt-20 photoBlock'>
             <div className='avatar mb-10'>
               <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{zIndex: '7', width: '20%', height: '20%' }}/>
@@ -246,10 +247,9 @@ export default function Home() {
             
           </div>
         </div>
-
-        <div id="Resume" className="Resume h-[150vh] bg-[#0A0F2B]">
-          <h1 className='text-[#fdf0d5] ml-[45vw] pt-20'>Resume</h1>
-          <h3 className='text-[#fdf0d5] ml-[43vw] mt-5' >My work exprience</h3>
+        <div className='bg-[#0A0F2B]'>
+        <div id="Resume" className="Resume h-[150vh]">
+          <h1 className='text-[#fdf0d5] text-center pt-20'>My work exprience</h1>
           <div className="ml-[-3vw] mt-5">
             <Timelines/>
           </div>
@@ -261,8 +261,9 @@ export default function Home() {
 
         </div>
 
+        
         <div id="Projects" className="block">
-          <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[10vh]'>Projects</h1>
+          <h1 className='text-[32px] text-white ml-[45vw] mb-[10vh] pt-[40vh]'>Projects</h1>
           <div className='ml-20 mr-20'>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
               <Grid xs={4}>
@@ -368,14 +369,14 @@ export default function Home() {
           </div>
           
         </div>
-      <div>
+      <div className='pt-[10vh]'>
         <footer>
-          <div className='h-10 pl-20 pt-3 bg-[#1b263b] '>
-            <p className='text-[#0A0F2B]'>© Copyright 2023 Joey Lam</p>
+          <div className='h-10 pt-3 pl-20 bg-[#1b263b] '>
+            <p className='text-[#fdf0d5]'>© Copyright 2023 Joey Lam</p>
           </div>
         </footer>
       </div>
-     
+     </div>
     </main>
   )
 }
