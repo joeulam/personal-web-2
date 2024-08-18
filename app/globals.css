@@ -73,7 +73,7 @@
 
 .Socials div{
   display: inline;
-  margin: 4%;
+  margin: 2%;
 }
 
 .Bg{
@@ -108,15 +108,13 @@
   font-size: 16px;
   color: #fdf0d5;
   width: 30vw;
+  text-align: center;
 }
 
 .avatar{
-  margin-left: 10vw;
-}
-
-.photoBlock{
-  margin-left: 33vw;
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 

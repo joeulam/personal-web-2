@@ -20,9 +20,9 @@ export default function Timelines() {
           <Box>
             <h2 className='text-[28px]'>Mellon Foundation</h2>
             <hr className="w-[29vw]"/>
-            <li className='w-3/4'>
+            <li className='w-2/4'>
               <ul>
-                Developed and integrated five API endpoints into Mellon's backend API to facilitate seamless data synchronization with a custom migration application, integrating data from Fluxx, Contentful, and a proprietary database.
+                Developed and integrated 5 API endpoints into Mellon's backend API to facilitate seamless data synchronization with a custom migration application, integrating data from Fluxx, Contentful, and a proprietary database.
               </ul>
               <ul>
                 Designed and implemented a custom internal tool that enables communication teams to independently sync data, reducing dependency on the IT team for synchronization tasks.

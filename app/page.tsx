@@ -27,7 +27,7 @@ export default function Home() {
       <div className="stickys">
         <div className="header grid">
           <ul className=''>
-            <li className='mx-2 sm:mx-5'><a href="#Bgs">Home</a></li>
+            <li className='mx-2 sm:mx-5'><a href="#Mids">Home</a></li>
             <li className='mx-2 sm:mx-5'><a href="#About">About</a></li>
             <li className='mx-2 sm:mx-5'><a href="#Resume">Resume</a></li>
             <li className='mx-2 sm:mx-5'><a href="#Projects">Projects</a></li>
@@ -127,17 +127,17 @@ export default function Home() {
       </div>
 
 
-      <div id="About" className="h-[170vh] bg-[#03071e]">
+      <div id="About" className="h-[180vh] bg-[#03071e]">
         <h1 className='AboutTitle pt-20'>About me</h1>
         <div className='mt-20 photoBlock'>
+
           <div className='avatar mb-10'>
             <Avatar alt="Remy Sharp" src="/IMG_2811.jpg" sx={{ zIndex: '7', width: '20%', height: '20%' }} />
           </div>
 
-
-          <div>
-            <p className='AboutDesp ml-10'>
-              I'm a student that is heavily intrested in the CS/Finanical
+          <div className='avatar'>
+            <p className='AboutDesp'>
+              I'm a student that is heavily intrested in the technical and finanical
               sector. I'm also a current Computer science and Economics major
               at Boston University, class of 2027.
             </p>
@@ -162,26 +162,7 @@ export default function Home() {
             <h2>Skills</h2>
             <hr className='w-[30vw]' />
             <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
-
-
             <div >
-              <div>
-                <div className="mt-5">
-                  MS Suite
-                </div>
-                <div className='inline-block'>
-                  <Box sx={{ zIndex: '5', color: "black", width: 400, height: 10 }}>
-                    <LinearProgress value={90} variant="determinate" />
-                  </Box>
-                </div>
-
-                <div>
-                  <p className='inline-block'>90%</p>
-                </div>
-
-              </div>
-
-
               <div>
                 <div className="mt-5">
                   Python
@@ -210,8 +191,6 @@ export default function Home() {
                   <p className='inline-block'>77%</p>
                 </div>
               </div>
-
-
               <div>
                 <div className="mt-5">
                   Java
@@ -225,10 +204,9 @@ export default function Home() {
                   <p className='inline-block'>67%</p>
                 </div>
               </div>
-
               <div>
                 <div className="mt-5">
-                  C++
+                  Kotlin
                 </div>
                 <div className='inline-block'>
                   <Box sx={{ zIndex: '5', width: 400, height: 10 }}>
@@ -243,15 +221,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className='bg-[#0A0F2B]'>
         <div id="Resume" className="Resume h-[150vh]">
           <h1 className='text-[#fdf0d5] text-center pt-20'>My work exprience</h1>
-          <div className="ml-[-3vw] mt-5">
+          <div className=" mt-5">
             <Timelines />
           </div>
 
-          <div className="ml-[-3vw] mt-10">
-            <h1 className='text-[#fdf0d5] ml-[42vw] mt-5'>Educational History</h1>
+          <div className=" mt-10">
+            <h1 className='text-[#fdf0d5] text-center mt-5'>Educational History</h1>
             <Timelines2 />
           </div>
 
@@ -259,7 +238,7 @@ export default function Home() {
 
 
         <div className="block pt-[40vh]">
-          <h1 className='text-[32px] text-white ml-[45vw] mb-[5vh] '>Projects</h1>
+          <h1 className='text-[32px] text-white text-center mb-[5vh] '>Projects</h1>
 
           <div id="Projects" className='ml-20 mr-20 '>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
