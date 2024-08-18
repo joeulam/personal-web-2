@@ -137,9 +137,7 @@ export default function Home() {
 
           <div className='avatar'>
             <p className='AboutDesp'>
-              I'm a student that is heavily intrested in the technical and finanical
-              sector. I'm also a current Computer science and Economics major
-              at Boston University, class of 2027.
+            I’m a student with a strong interest in both the technical and financial sectors, currently pursuing a combined major in Computer Science and Economics at Boston University, class of 2027.
             </p>
           </div>
         </div>
@@ -161,7 +159,7 @@ export default function Home() {
           <div className='SkillsBlockR absolute mr-20 right-60'>
             <h2>Skills</h2>
             <hr className='w-[30vw]' />
-            <p>I'm a highly intergratable teamworker that is strong in research and coding. My areas of expertise are computer science and economics.</p>
+            <p>I am a highly adaptable team player with strong skills in research and coding, with expertise in computer science and economics.</p>
             <div >
               <div>
                 <div className="mt-5">
@@ -254,7 +252,7 @@ export default function Home() {
                     <div className='text'>
                       <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>My personal website</h3>
                       <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, and MUI</p>
-                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my acomplishments</p>
+                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my accomplishments and works</p>
                     </div>
                   </div>
 
@@ -347,7 +345,7 @@ export default function Home() {
         <div className='pt-[10vh]'>
           <footer>
             <div className='h-10 pt-3 pl-20 bg-[#1b263b] '>
-              <p className='text-[#fdf0d5]'>© Copyright 2023 Joey Lam</p>
+              <p className='text-[#fdf0d5]'>© Copyright 2024 Joey Lam</p>
             </div>
           </footer>
         </div>
