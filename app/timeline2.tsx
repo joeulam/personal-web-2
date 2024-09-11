@@ -13,7 +13,7 @@ import SchoolIcon from '@mui/icons-material/School';
 export default function Timelines2() {
     return (
       <Timeline position="left">
-  
+        
   
         <TimelineItem >
           <TimelineOppositeContent sx={{color:"#fdf0d5"}}>

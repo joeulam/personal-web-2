@@ -221,7 +221,7 @@ export default function Home() {
       </div>
 
       <div className='bg-[#0A0F2B]'>
-        <div id="Resume" className="Resume h-[150vh]">
+        <div id="Resume" className="Resume h-[200vh]">
           <h1 className='text-[#fdf0d5] text-center pt-20'>My work exprience</h1>
           <div className=" mt-5">
             <Timelines />
@@ -235,7 +235,7 @@ export default function Home() {
         </div>
 
 
-        <div className="block mt-[40vh]">
+        <div className="block pt-20">
           <h1 className='text-[32px] text-white text-center mb-[5vh] '>Projects</h1>
 
           <div id="Projects" className='ml-20 mr-20 '>
