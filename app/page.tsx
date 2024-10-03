@@ -235,7 +235,7 @@ export default function Home() {
         </div>
 
 
-        <div className="block pt-20">
+        <div className="block pt-[25vh]">
           <h1 className='text-[32px] text-white text-center mb-[5vh] '>Projects</h1>
 
           <div id="Projects" className='ml-20 mr-20 '>
