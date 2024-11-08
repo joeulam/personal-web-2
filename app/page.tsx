@@ -240,6 +240,25 @@ export default function Home() {
 
           <div id="Projects" className='ml-20 mr-20 '>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+              
+            <Grid xs={4}>
+                <Card className='container Bufood'>
+                  <Image
+                    src="/BUfood.png"
+                    layout='fill'
+                    alt='/'
+                  />
+                  <div className='overlay'>
+                    <div className='text'>
+                      <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>BU Food Tracker</h3>
+                      <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, Mantine UI, MongoDB</p>
+                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created as a submission to Boston Hack 2024</p>
+                    </div>
+                  </div>
+
+                </Card>
+              </Grid>
+
               <Grid xs={4}>
                 <Card className='container'>
                   <Image
@@ -280,11 +299,10 @@ export default function Home() {
 
 
               <Grid xs={4}>
-                <Card className='container'>
+                <Card className='container algo'>
                   <Image
                     src="/algo.png"
-                    width={1800}
-                    height={1117}
+                    layout='fill'
                     alt='/'
                   />
                   <div className='overlay'>
