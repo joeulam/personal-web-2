@@ -252,7 +252,7 @@ export default function Home() {
                     <div className='text'>
                       <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>BU Food Tracker</h3>
                       <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, Mantine UI, MongoDB</p>
-                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created as a submission to Boston Hack 2024</p>
+                      <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created as a submission for Boston Hack 2024</p>
                     </div>
                   </div>
 
