@@ -244,9 +244,9 @@ export default function Home() {
             <Grid xs={4}>
                 <Card className='container Bufood'>
                   <Image
-                    src="/BUfood.png"
+                    src="public/BUfood.PNG"
                     layout='fill'
-                    alt='/algo.png'
+                    alt='/'
                   />
                   <div className='overlay'>
                     <div className='text'>
