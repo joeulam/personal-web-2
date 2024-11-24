@@ -245,7 +245,8 @@ export default function Home() {
                 <Card className='container Bufood'>
                   <Image
                     src="/buftlogo.png"     
-                    fill             
+                    width={1800}
+                    height={1117}             
                     alt='/'
                   />
                   <div className='overlay'>
@@ -255,7 +256,6 @@ export default function Home() {
                       <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created as a submission for Boston Hack 2024</p>
                     </div>
                   </div>
-
                 </Card>
               </Grid>
 
@@ -274,7 +274,6 @@ export default function Home() {
                       <p className='text-[16px] text-[#fdf0d5] w-[100%]'>Created to showcase my accomplishments and works</p>
                     </div>
                   </div>
-
                 </Card>
               </Grid>
 
