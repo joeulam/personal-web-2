@@ -246,7 +246,7 @@ export default function Home() {
                   <Image
                     src="/BUfood.png"
                     layout='fill'
-                    alt='/'
+                    alt='/algo.png'
                   />
                   <div className='overlay'>
                     <div className='text'>
