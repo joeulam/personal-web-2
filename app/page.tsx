@@ -244,7 +244,7 @@ export default function Home() {
             <Grid xs={4}>
                 <Card className='container Bufood'>
                   <Image
-                    src="public/BUfood.PNG"
+                    src="/buftlogo.PNG"
                     width={1800}
                     height={1117}                   
                     alt='/'
