@@ -245,7 +245,8 @@ export default function Home() {
                 <Card className='container Bufood'>
                   <Image
                     src="public/BUfood.PNG"
-                    layout='fill'
+                    width={1800}
+                    height={1117}                   
                     alt='/'
                   />
                   <div className='overlay'>
