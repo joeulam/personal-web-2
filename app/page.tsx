@@ -14,6 +14,7 @@ import Card from '@mui/material/Card';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
+import { height, maxHeight } from '@mui/system';
 
 
 
@@ -241,11 +242,11 @@ export default function Home() {
           <div id="Projects" className='ml-20 mr-20 '>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
               <Grid xs={4}>
-                  <Card className='container Bufood'>
-                    <Image
+                  <Card className='container max-h-56'>
+                    <Image                      
                       src="/IMG_6407.jpg"     
                       width={1800}
-                      height={1117}             
+                      height={200}             
                       alt='/'
                     />
                     <div className='overlay'>
@@ -258,7 +259,7 @@ export default function Home() {
                   </Card>
               </Grid>
               <Grid xs={4}>
-                  <Card className='container Bufood'>
+                  <Card className='container Bufood max-h-56'>
                     <Image
                       src="/buftlogo.png"     
                       width={1800}
