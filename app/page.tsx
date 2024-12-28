@@ -253,7 +253,7 @@ export default function Home() {
                       <div className='text'>
                         <h3 className='text-[24px] text-[#fdf0d5] w-[100%]'>Calico</h3>
                         <p className='text-[12px] text-[#e5e5e5] w-[100%] mb-5'>Used Nextjs, csstailwind, Ant design UI, MongoDB, Auth0, and Vercel</p>
-                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>An fiscal tracker with a cute twist to it</p>
+                        <p className='text-[16px] text-[#fdf0d5] w-[100%]'>A fiscal tracker with a cute twist to it</p>
                       </div>
                     </div>
                   </Card>
