@@ -14,7 +14,6 @@ import Card from '@mui/material/Card';
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
-import { height, maxHeight } from '@mui/system';
 
 
 
@@ -25,17 +24,26 @@ export default function Home() {
       <SpeedInsights />
       <Analytics />
 
-      <div className="stickys">
-        <div className="header grid">
-          <ul className=''>
-            <li className='mx-2 sm:mx-5'><a href="#Mids">Home</a></li>
-            <li className='mx-2 sm:mx-5'><a href="#About">About</a></li>
-            <li className='mx-2 sm:mx-5'><a href="#Resume">Resume</a></li>
-            <li className='mx-2 sm:mx-5'><a href="#Projects">Projects</a></li>
-            <li className='mx-2 sm:mx-5'><a href='https://github.com/joeulam'>Github</a></li>
+      {/* Navbar */}
+      <div className="stickys py-3">
+        <div className="header flex justify-center">
+          <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm sm:text-lg text-white">
+            {[
+              { name: "Home", link: "#Mids" },
+              { name: "About", link: "#About" },
+              { name: "Resume", link: "#Resume" },
+              { name: "Projects", link: "#Projects" },
+              { name: "Github", link: "https://github.com/joeulam" },
+            ].map((item, index) => (
+              <li key={index}>
+                <a href={item.link} className="hover:text-blue-400 hover:transition 2s">
+                  {item.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-        <hr className='w-1/2 lg:w-{20vw}' />
+        <hr className="w-1/2 mx-auto" />
       </div>
 
       <div className='blocks'>

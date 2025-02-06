@@ -13,11 +13,11 @@
 
 /* ----------- Header Info -------------*/
 .header{
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   z-index: 9999;
   color:white ;
-  margin-left:2vw;
+  padding-left:2vw;
 
 }
 .header ul{
