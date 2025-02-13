@@ -18,36 +18,27 @@ import { Analytics } from '@vercel/analytics/react';
 
 
 
-export default function Home() {
+export default function old() {
   return (
-    <main className='bgim'>
+    <main>
       <SpeedInsights />
       <Analytics />
-
-      {/* Navbar */}
-      <div className="stickys py-3">
-        <div className="header flex justify-center">
-          <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm sm:text-lg text-white">
-            {[
-              { name: "Home", link: "#Mids" },
-              { name: "About", link: "#About" },
-              { name: "Resume", link: "#Resume" },
-              { name: "Projects", link: "#Projects" },
-              { name: "Github", link: "https://github.com/joeulam" },
-            ].map((item, index) => (
-              <li key={index}>
-                <a href={item.link} className="hover:text-blue-400 hover:transition 2s">
-                  {item.name}
-                </a>
-              </li>
-            ))}
+      <div className='bgim'>
+      </div>
+      <div className="stickys">
+        <div className="header grid">
+          <ul className=''>
+            <li className='mx-2 sm:mx-5'><a href="#Mids">Home</a></li>
+            <li className='mx-2 sm:mx-5'><a href="#About">About</a></li>
+            <li className='mx-2 sm:mx-5'><a href="#Resume">Resume</a></li>
+            <li className='mx-2 sm:mx-5'><a href="#Projects">Projects</a></li>
+            <li className='mx-2 sm:mx-5'><a href='https://github.com/joeulam'>Github</a></li>
           </ul>
         </div>
-        <hr className="w-1/2 mx-auto" />
+        <hr className='sm:w-{100%} w-1/2 lg:w-{20vw}' />
       </div>
 
       <div className='blocks'>
-        <div className=''>
           <div id="Mids">
             <h1 className="text-center pt-[30vh] block text-[#fdf0d5] text-[48px] lg:text-[64px]">Joey Lam</h1>
           </div>
@@ -114,7 +105,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='arrowdiv pt-[-10vh]'>
+          <div className='arrowdiv '>
             <a href='#About'>
               <ExpandCircleDownIcon className="duration-700"
                 sx={{
@@ -131,7 +122,6 @@ export default function Home() {
                 }
               />
             </a>
-          </div>
         </div>
       </div>
 

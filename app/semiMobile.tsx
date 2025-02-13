@@ -20,7 +20,7 @@ export default function Home() {
       <Analytics />
 
       {/* Navbar */}
-      <div className="stickys bg-[#1b263b] py-3">
+      <div className="stickys bg-[#1b263b]">
         <div className="header flex justify-center">
           <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm sm:text-lg text-white">
             {[
@@ -79,7 +79,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div id="About" className="bg-[#03071e] py-20 text-white text-center">
+      <div id="About" className="bg-[#03071e] text-white text-center">
         <h1 className="text-2xl sm:text-3xl mb-10">About Me</h1>
         <div className="flex flex-col items-center">
           <Avatar src="/IMG_2811.jpg" sx={{ width: 100, height: 100 }} />

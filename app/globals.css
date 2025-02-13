@@ -5,6 +5,7 @@
   display: none;
 }
 *{
+  margin: 0;
   scroll-behavior:smooth
 }
 
@@ -64,6 +65,10 @@
   background-repeat:no-repeat;
   background-size:100vw 100vh;
   background-attachment:fixed;
+  position: absolute;
+  width: 100vw;
+  height: 120vh;
+  z-index: -1;
 }
 
 .Socials{
@@ -221,4 +226,27 @@
 
 .algo{
   height: 100%;
+}
+
+
+@media screen and (max-width: 900px){
+  html{
+    width: 100vw;
+  }
+  hr{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .header{
+    width: 100vw;
+  }
+  .bgim{
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .blocks{
+    width: 100vw;
+  }
 }
