@@ -4,17 +4,30 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Typewriter from "typewriter-effect";
 import { Card, List } from "antd";
 import { data, experience } from "../project";
+import { MenuOutlined } from "@ant-design/icons";
+import { Drawer } from "antd";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuItems = ["Home", "About", "Resume", "Projects", "Others"];
+
   return (
     <main className="min-h-screen bg-white text-black flex flex-col items-center px-8 font-sans">
       <SpeedInsights />
       <Analytics />
-
-      {/* Navigation - Clean & Minimal */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-sm">
-        <ul className="flex justify-center space-x-8 py-4 text-lg font-medium">
-          {["Home", "About", "Resume", "Projects", "Others"].map((item) => (
+      <nav className="z-50 fixed top-0 left-0 w-full bg-white shadow-sm">
+      <div className="flex justify-between items-center px-6 py-4 md:px-10">
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open navigation"
+        >
+          <MenuOutlined className="text-2xl" />
+        </button>
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex justify-center w-1/2 m-auto space-x-8 text-lg font-medium">
+          {menuItems.map((item) => (
             <li key={item}>
               <a className="hover:text-gray-500 transition duration-200 cursor-pointer">
                 {item}
@@ -22,7 +35,26 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </nav>
+      </div>
+
+      {/* Mobile Drawer Navigation */}
+      <Drawer
+        title="Menu"
+        placement="left"
+        onClose={() => setIsOpen(false)}
+        open={isOpen}
+      >
+        <ul className="space-y-4 text-lg font-medium">
+          {menuItems.map((item) => (
+            <li key={item} onClick={() => setIsOpen(false)}>
+              <a className="block hover:text-gray-500 transition duration-200 cursor-pointer">
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Drawer>
+    </nav>
 
       {/* Hero Section */}
       <section className="h-screen flex flex-col justify-center text-center">
@@ -65,7 +97,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="h-screen flex flex-col justify-center max-w-2xl w-full">
+      <section className="min-h-screen flex flex-col justify-center max-w-2xl w-full mx-auto py-12">
         <h2 className="text-3xl font-semibold">Resume</h2>
         <p className="mt-2 text-gray-500">{`This is the resume section.`}</p>
         <div>

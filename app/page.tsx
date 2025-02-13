@@ -37,7 +37,10 @@ export default function old() {
         </div>
         <hr className='sm:w-{100%} w-1/2 lg:w-{20vw}' />
       </div>
-
+      <h1 className='text-center text-lg font-semibold text-gray-800 p-4 rounded-md shadow-md'>
+        New version of this website is currently under construction. Click {" "}
+        <a href='./new' className='text-yellow-50 hover:underline'>here</a> to see it.
+      </h1>
       <div className='blocks'>
           <div id="Mids">
             <h1 className="text-center pt-[30vh] block text-[#fdf0d5] text-[48px] lg:text-[64px]">Joey Lam</h1>
