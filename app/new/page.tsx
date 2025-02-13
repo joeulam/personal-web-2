@@ -2,9 +2,9 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Typewriter from "typewriter-effect";
-import { Card, List } from "antd";
-import { data, experience } from "../project";
-import { MenuOutlined } from "@ant-design/icons";
+import { Button, Card, List } from "antd";
+import { data, experience } from "./project";
+import { GithubOutlined, MenuOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useState } from "react";
 
@@ -17,44 +17,44 @@ export default function Home() {
       <SpeedInsights />
       <Analytics />
       <nav className="z-50 fixed top-0 left-0 w-full bg-white shadow-sm">
-      <div className="flex justify-between items-center px-6 py-4 md:px-10">
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open navigation"
-        >
-          <MenuOutlined className="text-2xl" />
-        </button>
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex justify-center w-1/2 m-auto space-x-8 text-lg font-medium">
-          {menuItems.map((item) => (
-            <li key={item}>
-              <a className="hover:text-gray-500 transition duration-200 cursor-pointer">
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className="flex justify-between items-center px-6 py-4 md:px-10">
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open navigation"
+          >
+            <MenuOutlined className="text-2xl" />
+          </button>
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex justify-center w-1/2 m-auto space-x-8 text-lg font-medium">
+            {menuItems.map((item) => (
+              <li key={item}>
+                <a className="hover:text-gray-500 transition duration-200 cursor-pointer">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Mobile Drawer Navigation */}
-      <Drawer
-        title="Menu"
-        placement="left"
-        onClose={() => setIsOpen(false)}
-        open={isOpen}
-      >
-        <ul className="space-y-4 text-lg font-medium">
-          {menuItems.map((item) => (
-            <li key={item} onClick={() => setIsOpen(false)}>
-              <a className="block hover:text-gray-500 transition duration-200 cursor-pointer">
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Drawer>
-    </nav>
+        {/* Mobile Drawer Navigation */}
+        <Drawer
+          title="Menu"
+          placement="left"
+          onClose={() => setIsOpen(false)}
+          open={isOpen}
+        >
+          <ul className="space-y-4 text-lg font-medium">
+            {menuItems.map((item) => (
+              <li key={item} onClick={() => setIsOpen(false)}>
+                <a className="block hover:text-gray-500 transition duration-200 cursor-pointer">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Drawer>
+      </nav>
 
       {/* Hero Section */}
       <section className="h-screen flex flex-col justify-center text-center">
@@ -113,25 +113,42 @@ export default function Home() {
             </Card>
           ))}
         </div>
+        <a className="mt-5" href="/cv.pdf" download="Joey Lam CV"><Button className="w-[100%]">Download my CV</Button></a>
+        
       </section>
 
       {/* Projects Section - Notion-Style */}
-      <section className="h-screen flex flex-col justify-center max-w-2xl w-full">
+      <section className="min-h-screen flex flex-col justify-center max-w-2xl w-full">
         <h2 className="text-3xl font-semibold mb-6">Projects</h2>
         <List
           grid={{
-            gutter: 16,
+            gutter: 18,
             xs: 1,
             sm: 2,
-            md: 3,
-            lg: 3,
+            md: 2,
+            lg: 2,
+            xl: 2,
           }}
           dataSource={data}
           renderItem={(item) => (
             <List.Item>
-              <Card className="bg-white border border-gray-200 shadow-none text-black p-6">
-                <h3 className="font-medium">{item.title}</h3>
-                {/* <p className="text-gray-600">{item.description}</p> */}
+              <Card
+                className="bg-white border border-gray-200 shadow-none text-black p-6"
+                cover={
+                  <img
+                    alt={item.title}
+                    src={item.image}
+                  />
+                }
+                actions={
+                  item.websiteURL
+                    ? [<GithubOutlined />, <a href={item.websiteURL} target="_blank" rel="noopener noreferrer">Check the website</a>]
+                    : [<GithubOutlined/>] 
+                }
+              >
+                <h3 className="font-bold text-lg">{item.title}</h3>
+                <p className="text-gray-800">{item.description}</p>
+                <p className="text-gray-600">Tech Stack: {item.techStack}</p>
               </Card>
             </List.Item>
           )}

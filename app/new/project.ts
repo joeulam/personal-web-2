@@ -1,12 +1,15 @@
 export const data = [
   {
+    key:'1',
     title: 'Calico',
     description: "A financial tracker with a cute and playful twist.",
     techStack: "Next.js, Tailwind CSS, OAuth, Ant Design, Mantine UI",
     websiteURL:'https://calicos.vercel.app/',
-    image:'',
+    gitURL:'https://calicos.vercel.app/',
+    image:'/IMG_6407.jpg',
   },
   {
+    key:'2',
     title: 'Bagge',
     description: "A inventory system.",
     techStack: "Next.js, Tailwind CSS, OAuth, Ant Design",
@@ -14,13 +17,31 @@ export const data = [
     image:'',
   },
   {
-    title: 'EportfolioV2',
-    description: "An modern online portfolio",
+    key:'',
+    title: 'EportfolioV3',
+    description: "A modern and minimalistic online portfolio",
     techStack:"TailwindCSS, Next.js, Ant Design",
     websiteURL:'',
     image:'',
   },
   {
+    key:'',
+    title: 'BU Food Tracker',
+    description: "An application that scrapes the food data from the BU dining hall and calculates the nutritional value. Created as a submission for Boston Hack 2024.",
+    techStack:"Next.js, Tailwind CSS, Mantine UI, MongoDB",
+    websiteURL:'https://bostonhacks.vercel.app/',
+    image:'/buftlogo.png',
+  },
+  {
+    key:'3',
+    title: 'EportfolioV2',
+    description: "A modern online portfolio",
+    techStack:"TailwindCSS, Next.js, Ant Design",
+    websiteURL:'',
+    image:'/website.png',
+  },
+  {
+    key:'4',
     title: 'Emotion checker',
     description: "A computer vision project that detects the user's facial emotion and returns a confidence score along with the identified emotion.",
     techStack:"Python, CV2, Tensorflow, Matplot, Panda",
@@ -28,20 +49,23 @@ export const data = [
     image:'',
   },
   {
+    key:'5',
     title: 'PhotoPort',
     description: "A website for storing and showcasing a photography portfolio.",
     techStack:"Next.js, Tailwind CSS",
     websiteURL:'',
-    image:'',
+    image:'/photoweb.png',
   },
   {
+    key:'6',
     title: 'CrossoverTrader',
     description: "A Python script that performs automatic trades using algorithms that produced an ROI of 2.37%",
     techStack:"Python, Alpaca API, Finnhub, yfinance, Matplotlib",
     websiteURL:'',
-    image:'',
+    image:'/algo.png',
   },
   {
+    key:'7',
     title: 'Scrapper',
     description: "A Python script that scrapes trade data from capitol hill and returns recent activities.",
     techStack:"Python, NumPy, pandas, Matplotlib, BeautifulSoup",
@@ -49,22 +73,24 @@ export const data = [
     image:'',
   },
   {
+    key:'8',
     title: 'HEYO',
     description: "A desktop mental health app",
     techStack:"Electron, PostgreSQL",
     websiteURL:'',
-    image:'',
+    image:'/heyo.web.png',
   },
   {
+    key:'9',
     title: 'Eportfolio',
     description: "An online portfolio",
     techStack:"JS, TailwindCSS, Next.js",
-    websiteURL:'',
-    image:'',
+    websiteURL:'https://joeyweb.vercel.app/',
+    image:'/websitev1.png',
   },
 ];
 
-export const experience = [
+export const experience = [ 
   {
     companyTitle: 'The Andrew Mellon Foundation',
     jobTitle: 'Consultant',
