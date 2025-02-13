@@ -41,8 +41,8 @@ export const data = [
     title: "EportfolioV2",
     description: "A modern online portfolio",
     techStack: "TailwindCSS, Next.js, Ant Design",
-    websiteURL: "",
-    gitURL: "",
+    websiteURL: "https://joeyresume.vercel.app/",
+    gitURL: "https://github.com/joeulam/personal-web-2",
     image: "/website.png",
   },
   {
@@ -52,7 +52,7 @@ export const data = [
       "A computer vision project that detects the user's facial emotion and returns a confidence score along with the identified emotion.",
     techStack: "Python, CV2, Tensorflow, Matplot, Panda",
     websiteURL: "",
-    gitURL: "",
+    gitURL: "https://github.com/joeulam/Facial-emotion-detection",
     image: "",
   },
   {
@@ -61,8 +61,8 @@ export const data = [
     description:
       "A website for storing and showcasing a photography portfolio.",
     techStack: "Next.js, Tailwind CSS",
-    websiteURL: "",
-    gitURL: "",
+    websiteURL: "https://joeulam-photo.vercel.app/",
+    gitURL: "https://github.com/joeulam/Photography-page",
     image: "/photoweb.png",
   },
   {
@@ -72,7 +72,7 @@ export const data = [
       "A Python script that performs automatic trades using algorithms that produced an ROI of 2.37%",
     techStack: "Python, Alpaca API, Finnhub, yfinance, Matplotlib",
     websiteURL: "",
-    gitURL: "",
+    gitURL: "https://github.com/joeulam/Algo-trading",
     image: "/algo.png",
   },
   {
@@ -82,7 +82,7 @@ export const data = [
       "A Python script that scrapes trade data from capitol hill and returns recent activities.",
     techStack: "Python, NumPy, pandas, Matplotlib, BeautifulSoup",
     websiteURL: "",
-    gitURL: "",
+    gitURL: "https://github.com/joeulam/Stock-data-ana",
     image: "",
   },
   {
@@ -91,7 +91,7 @@ export const data = [
     description: "A desktop mental health app",
     techStack: "Electron, PostgreSQL",
     websiteURL: "",
-    gitURL: "",
+    gitURL: "https://github.com/joeulam/wellness-electron",
     image: "/heyo.web.png",
   },
   {
@@ -100,7 +100,7 @@ export const data = [
     description: "An online portfolio",
     techStack: "JS, TailwindCSS, Next.js",
     websiteURL: "https://joeyweb.vercel.app/",
-    gitURL: "",
+    gitURL: "https://github.com/joeulam/ssrtest",
     image: "/websitev1.png",
   },
 ];
