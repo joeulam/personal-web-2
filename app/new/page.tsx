@@ -21,6 +21,7 @@ export default function Home() {
           <button
             className="md:hidden"
             onClick={() => setIsOpen(true)}
+            onKeyDown={() => setIsOpen(true)}
             aria-label="Open navigation"
           >
             <MenuOutlined className="text-2xl" />
