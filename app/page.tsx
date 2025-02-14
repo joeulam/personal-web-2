@@ -13,8 +13,9 @@ import {
   SunOutlined,
 } from "@ant-design/icons";
 import { Drawer } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Space, Switch } from "antd";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,14 +47,19 @@ export default function Home() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex justify-center w-1/2 m-auto space-x-8 text-lg font-medium">
             {menuItems.map((item) => (
-              <li key={item}>
+              <motion.li
+                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                key={item}
+              >
                 <a
                   href={`#${item}`}
                   className="hover:text-gray-500 transition duration-200 cursor-pointer"
                 >
                   {item}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
           <Space className="hidden md:flex" direction="vertical">
@@ -79,15 +85,21 @@ export default function Home() {
           open={isOpen}
         >
           <ul className="space-y-4 text-lg font-medium">
-            {menuItems.map((item) => (
-              <li key={item} onClick={() => setIsOpen(false)}>
+            {menuItems.map((item, index) => (
+              <motion.li
+                key={`${item}-${isOpen}`} // Change key to force reanimation
+                initial={{ opacity: 0, x: -50 }} // Start off-screen
+                animate={{ opacity: 1, x: 0 }} // Slide into place
+                transition={{ duration: 0.3, delay: index * 0.1 }} // Staggered effect
+                onClick={() => setIsOpen(false)}
+              >
                 <a
                   href={`#${item}`}
                   className="block hover:text-gray-500 transition duration-200 cursor-pointer"
                 >
                   {item}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
           <div className="mt-4">
@@ -138,7 +150,15 @@ export default function Home() {
         </h3>
       </section>
 
-      <section
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 2 }}
+        variants={{
+          visible: { opacity: 1, scale: 1, x: 0 },
+          hidden: { opacity: 0, scale: 1, x: -500 },
+        }}
         id="About"
         className="h-screen flex flex-col justify-center max-w-2xl w-full"
       >
@@ -185,9 +205,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
         id="Resume"
         className="min-h-screen flex flex-col justify-center max-w-2xl w-full mx-auto py-12"
       >
@@ -198,26 +218,51 @@ export default function Home() {
           }`}
         >{`This is the resume section.`}</p>
         <div>
-          {experience.map((job) => (
-            <Card className={`mt-10 ${
-              theme === "dark" ? "bg-gray-300 text-gray-700" : "bg-white text-black"
-            }`} title={job.companyTitle} extra={job.date}>
-              <p className="font-medium">Job Title: {job.jobTitle}</p>
-              <h5 className="font-medium mt-2">Responsibilities:</h5>
-              <ul className={`list-disc list-inside text-gray-700 mt-1`}>
-                {job.responsibility.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </Card>
+          {experience.map((job, index) => (
+            <motion.div
+              key={job.companyTitle}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }} // Triggers when 30% is visible
+              transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger animation
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: -50 },
+              }}
+            >
+              <Card
+                className={`mt-10 ${
+                  theme === "dark"
+                    ? "bg-white text-gray-700"
+                    : "bg-white text-black"
+                }`}
+                title={job.companyTitle}
+                extra={job.date}
+              >
+                <p className="font-medium">Job Title: {job.jobTitle}</p>
+                <h5 className="font-medium mt-2">Responsibilities:</h5>
+                <ul className="list-disc list-inside text-gray-700 mt-1">
+                  {job.responsibility.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </Card>
+            </motion.div>
           ))}
         </div>
-        <a className={`mt-5 ${
-              theme === "dark" ? "bg-gray-300 text-gray-700 rounded-md" : "bg-white text-black"
-            } `} href="/cv.pdf" download="Joey Lam CV">
+
+        <a
+          className={`mt-5 ${
+            theme === "dark"
+              ? "bg-white text-gray-700 rounded-md"
+              : "bg-white text-black"
+          } `}
+          href="/cv.pdf"
+          download="Joey Lam CV"
+        >
           <Button className="w-[100%]">Download my CV</Button>
         </a>
-      </section>
+      </motion.section>
 
       {/* Projects Section - Notion-Style */}
       <section
@@ -226,7 +271,7 @@ export default function Home() {
       >
         <h2 className="text-3xl font-semibold ">Projects</h2>
         <p
-          className={`"mt-2 mb-6" ${
+          className={`mt-2 mb-6 ${
             theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
           }`}
         >{`This is the project section.`}</p>
@@ -240,32 +285,41 @@ export default function Home() {
             xl: 2,
           }}
           dataSource={data}
-          renderItem={(item) => (
+          renderItem={(item, index) => (
             <List.Item>
-              <Card
-                className={`bg-white border border-gray-200 shadow-none text-black p-6 ${
-                  theme === "dark" ? "[&_.ant-card-actions]:bg-gray-300 bg-gray-300 text-gray-700" : "bg-white text-black"
-                }`}
-                cover={<img alt={item.title} src={item.image} />}
-                actions={
-                  item.websiteURL
-                    ? [
-                        <GithubOutlined  />,
-                        <a
-                          href={item.websiteURL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Check the website
-                        </a>,
-                      ]
-                    : [<GithubOutlined />]
-                }
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} // Start slightly below
+                whileInView={{ opacity: 1, y: 0 }} // Slide into view
+                viewport={{ once: true, amount: 0.2 }} // Triggers when 20% is visible
+                transition={{ duration: 0.5, delay: index * 0.1 }} // Stagger effect
               >
-                <h3 className="font-bold text-lg">{item.title}</h3>
-                <p className="text-gray-800">{item.description}</p>
-                <p className="text-gray-600">Tech Stack: {item.techStack}</p>
-              </Card>
+                <Card
+                  className={`bg-white border border-gray-200 shadow-none text-black p-6 ${
+                    theme === "dark"
+                      ? " bg-gray-300 text-gray-700"
+                      : "bg-white text-black"
+                  }`}
+                  cover={<img alt={item.title} src={item.image} />}
+                  actions={
+                    item.websiteURL
+                      ? [
+                          <GithubOutlined />,
+                          <a
+                            href={item.websiteURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Check the website
+                          </a>,
+                        ]
+                      : [<GithubOutlined />]
+                  }
+                >
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                  <p className="text-gray-800">{item.description}</p>
+                  <p className="text-gray-600">Tech Stack: {item.techStack}</p>
+                </Card>
+              </motion.div>
             </List.Item>
           )}
         />
