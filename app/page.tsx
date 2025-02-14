@@ -90,7 +90,7 @@ export default function Home() {
                 key={`${item}-${isOpen}`} // Change key to force reanimation
                 initial={{ opacity: 0, x: -50 }} // Start off-screen
                 animate={{ opacity: 1, x: 0 }} // Slide into place
-                transition={{ duration: 0.3, delay: index * 0.1 }} // Staggered effect
+                transition={{ duration: 0.8, delay: index * 0.1 }} // Staggered effect
                 onClick={() => setIsOpen(false)}
               >
                 <a
@@ -151,60 +151,65 @@ export default function Home() {
       </section>
 
       <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 2 }}
-        variants={{
-          visible: { opacity: 1, scale: 1, x: 0 },
-          hidden: { opacity: 0, scale: 1, x: -500 },
-        }}
         id="About"
         className="h-screen flex flex-col justify-center max-w-2xl w-full"
       >
-        <div>
-          <Avatar
-            className="align-middle"
-            size={{ xs: 40, sm: 50, md: 50, lg: 64, xl: 64, xxl: 70 }}
-            src={<img src="/headshot.png" alt="photo of joey" />}
-          />
-          <h2 className="text-3xl font-semibold">About Me 👋</h2>
-          <p
-            className={`mt-2 align-bottom  ${
-              theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
-            }`}
-          >{`This is the about me section.`}</p>
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Reanimates and triggers when 20% is visible
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, scale: 1, x: 0 },
+            hidden: { opacity: 0, scale: 1, x: -50 }, // Reduce x distance for smoother effect
+          }}
+        >
+          <div>
+            <Avatar
+              className="align-middle"
+              size={{ xs: 40, sm: 50, md: 50, lg: 64, xl: 64, xxl: 70 }}
+              src={<img src="/headshot.png" alt="photo of joey" />}
+            />
+            <h2 className="text-3xl font-semibold">About Me 👋</h2>
+            <p
+              className={`mt-2 align-bottom  ${
+                theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
+              }`}
+            >{`This is the about me section.`}</p>
+          </div>
 
-        <div>
-          <h3>
-            Hi my name is Joey Lam! Im a current 2nd year student at Boston
-            University studying Computer science and Economics. Im passionate
-            about cutting edge technologies in the tech sector! My hobbies are
-            chrocetting, woodwork, and playing ping pong !
-          </h3>
-          <div className="mt-10">
-            <h2>My socials</h2>
-            <div className="w-1/3 mt-5 flex flex-1 justify-between">
-              <GithubOutlined
-                style={{ fontSize: "150%" }}
-                onClick={() => window.open("https://github.com/joeulam")}
-              />
-              <LinkedinOutlined
-                style={{ fontSize: "150%" }}
-                onClick={() =>
-                  window.open("https://www.linkedin.com/in/joey-lam-89057021b/")
-                }
-              />
-              <InstagramOutlined
-                style={{ fontSize: "150%" }}
-                onClick={() =>
-                  window.open("https://www.instagram.com/joeulamb/")
-                }
-              />
+          <div>
+            <h3>
+              Hi my name is Joey Lam! Im a current 2nd year student at Boston
+              University studying Computer science and Economics. Im passionate
+              about cutting edge technologies in the tech sector! My hobbies are
+              chrocetting, woodwork, and playing ping pong !
+            </h3>
+            <div className="mt-10">
+              <h2>My socials</h2>
+              <div className="w-1/3 mt-5 flex flex-1 justify-between">
+                <GithubOutlined
+                  style={{ fontSize: "150%" }}
+                  onClick={() => window.open("https://github.com/joeulam")}
+                />
+                <LinkedinOutlined
+                  style={{ fontSize: "150%" }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/joey-lam-89057021b/"
+                    )
+                  }
+                />
+                <InstagramOutlined
+                  style={{ fontSize: "150%" }}
+                  onClick={() =>
+                    window.open("https://www.instagram.com/joeulamb/")
+                  }
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.section>
 
       <motion.section
