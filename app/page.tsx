@@ -2,7 +2,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Typewriter from "typewriter-effect";
-import { Avatar, Badge, Button, Card, List } from "antd";
+import { Avatar, Button, Card, List } from "antd";
 import { data, experience } from "./project";
 import {
   GithubOutlined,
