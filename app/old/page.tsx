@@ -38,8 +38,7 @@ export default function old() {
         <hr className='sm:w-{100%} w-1/2 lg:w-{20vw}' />
       </div>
       <h1 className='text-center text-lg font-semibold text-gray-800 p-4 rounded-md shadow-md'>
-        New version of this website is currently under construction. Click {" "}
-        <a href='./new' className='text-yellow-50 hover:underline'>here</a> to see it.
+        This website is currently deprecated. 
       </h1>
       <div className='blocks'>
           <div id="Mids">
