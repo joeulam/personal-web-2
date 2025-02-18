@@ -13,18 +13,23 @@ import {
   SunOutlined,
 } from "@ant-design/icons";
 import { Drawer } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Space, Switch } from "antd";
 import { motion } from "framer-motion";
+import NodeBackground from "./nodeBackground";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = ["Home", "About", "Resume", "Projects"];
-  const [theme, setTheme] = useState("light");
-
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
   return (
     <main
-      className={`min-h-screen flex flex-col items-center px-8 font-sans ${
+      className={`min-h-screen flex flex-col items-center px-8 font-sans bg-animated ${
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
@@ -120,7 +125,16 @@ export default function Home() {
         id="Home"
         className="h-screen flex flex-col justify-center text-center"
       >
-        <h2 className="md:text-7xl text-5xl font-bold mb-4 tracking-tight">Welcome</h2>
+        <NodeBackground />
+
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="md:text-7xl text-5xl font-bold mb-4 tracking-tight"
+        >
+          Welcome
+        </motion.h2>
         <h3 className="text-xl font-light text-gray-600">
           <div
             className={`${theme === "dark" ? "text-[#c3c5c5] " : "text-black"}`}
@@ -164,51 +178,61 @@ export default function Home() {
             hidden: { opacity: 0, scale: 1, x: -50 }, // Reduce x distance for smoother effect
           }}
         >
-          <div className="">
-            <Avatar
-              className="align-middle"
-              size={{ xs: 40, sm: 50, md: 50, lg: 64, xl: 64, xxl: 70 }}
-              src={<img src="/headshot.png" alt="photo of joey" />}
-            />
-            <h2 className="md:text-5xl text-4xl font-semibold">About Me 👋</h2>
-            <p
-              className={`md:text-2xl mt-2 align-bottom  ${
-                theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
-              }`}
-            >{`This is the about me section.`}</p>
-          </div>
+          <Card
+          className={`${
+            theme === "dark"
+              ? "!bg-gray-900 text-white "
+              : "bg-white text-black border border-black"
+          }`}>
+            <div>
+              <Avatar
+                className="align-middle"
+                size={{ xs: 40, sm: 50, md: 50, lg: 64, xl: 64, xxl: 70 }}
+                src={<img src="/headshot.png" alt="photo of joey" />}
+              />
+              <h2 className="md:text-5xl text-4xl font-semibold">
+                About Me 👋
+              </h2>
+              <p
+                className={`md:text-2xl mt-2 align-bottom  ${
+                  theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
+                }`}
+              >{`This is the about me section.`}</p>
+            </div>
 
-          <div>
-            <h3 className="md:text-2xl text-base">
-                Hi, my name is Joey Lam! I'm a second-year student at Boston University, 
-                studying Computer Science and Economics. I'm passionate about cutting-edge 
-                technologies in the tech sector! My hobbies include crocheting, woodworking, 
-                and playing ping pong.
-            </h3>
-            <div className="mt-10">
-              <h2 className="md:text-2xl text-base">My socials</h2>
-              <div className="w-1/3 mt-5 flex flex-1 justify-between">
-                <GithubOutlined
-                  style={{ fontSize: "150%" }}
-                  onClick={() => window.open("https://github.com/joeulam")}
-                />
-                <LinkedinOutlined
-                  style={{ fontSize: "150%" }}
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/joey-lam-89057021b/"
-                    )
-                  }
-                />
-                <InstagramOutlined
-                  style={{ fontSize: "150%" }}
-                  onClick={() =>
-                    window.open("https://www.instagram.com/joeulamb/")
-                  }
-                />
+            <div>
+              <h3 className="md:text-2xl text-base">
+                Hi, my name is Joey Lam! I'm a second-year student at Boston
+                University, studying Computer Science and Economics. I'm
+                passionate about cutting-edge technologies in the tech sector!
+                My hobbies include crocheting, woodworking, and playing ping
+                pong.
+              </h3>
+              <div className="mt-10">
+                <h2 className="md:text-2xl text-base">My socials</h2>
+                <div className="w-1/3 mt-5 flex flex-1 justify-between">
+                  <GithubOutlined
+                    style={{ fontSize: "150%" }}
+                    onClick={() => window.open("https://github.com/joeulam")}
+                  />
+                  <LinkedinOutlined
+                    style={{ fontSize: "150%" }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/joey-lam-89057021b/"
+                      )
+                    }
+                  />
+                  <InstagramOutlined
+                    style={{ fontSize: "150%" }}
+                    onClick={() =>
+                      window.open("https://www.instagram.com/joeulamb/")
+                    }
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </Card>
         </motion.div>
       </motion.section>
 
