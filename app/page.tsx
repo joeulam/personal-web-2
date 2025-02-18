@@ -21,12 +21,22 @@ import NodeBackground from "./nodeBackground";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = ["Home", "About", "Resume", "Projects"];
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
+  const [theme, setTheme] = useState<string>("light");
+
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme") || "light"; 
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  const changeTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", newTheme);
+    }
+  };
   return (
     <main
       className={`min-h-screen flex flex-col items-center px-8 font-sans bg-animated ${
@@ -70,7 +80,7 @@ export default function Home() {
           <Space className="hidden md:flex" direction="vertical">
             <Switch
               checked={theme === "light"}
-              onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onChange={() => changeTheme()}
               unCheckedChildren={<MoonOutlined />}
               checkedChildren={<SunOutlined />}
             />
@@ -111,7 +121,7 @@ export default function Home() {
             <Space direction="vertical">
               <Switch
                 checked={theme === "light"}
-                onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onChange={() => changeTheme()}
                 unCheckedChildren={<MoonOutlined />}
                 checkedChildren={<SunOutlined />}
               />
