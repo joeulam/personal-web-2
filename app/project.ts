@@ -1,7 +1,7 @@
 export const data = [
   {
     key: "1",
-    title: "Calico",
+    title: "Calico (In-progress)",
     description: "A financial tracker with a cute and playful twist.",
     techStack: "Next.js, Tailwind CSS, OAuth, Ant Design, Mantine UI",
     websiteURL: "https://calicos.vercel.app/",
@@ -10,7 +10,7 @@ export const data = [
   },
   {
     key: "2",
-    title: "Bagge",
+    title: "Bagge (In-progress)",
     description: "A inventory system.",
     techStack: "Next.js, Tailwind CSS, OAuth, Ant Design",
     websiteURL: "https://joeyinventory.vercel.app/",
