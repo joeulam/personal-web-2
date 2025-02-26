@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme") || "light"; 
+      const savedTheme = localStorage.getItem("theme") || "light";
       setTheme(savedTheme);
     }
   }, []);
@@ -189,11 +189,12 @@ export default function Home() {
           }}
         >
           <Card
-          className={`${
-            theme === "dark"
-              ? "!bg-gray-900 text-white "
-              : "bg-white text-black border border-black"
-          }`}>
+            className={`${
+              theme === "dark"
+                ? "!bg-gray-900 text-white "
+                : "bg-white text-black border border-black"
+            }`}
+          >
             <div>
               <Avatar
                 className="align-middle"
@@ -342,16 +343,32 @@ export default function Home() {
                   actions={
                     item.websiteURL
                       ? [
-                          <GithubOutlined />,
+                        
+                            <a
+                              href={item.gitURL}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <GithubOutlined />
+                            </a>,
+                            <a
+                              href={item.websiteURL}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Check the website
+                            </a>
+                          
+                        ]
+                      : [
                           <a
                             href={item.websiteURL}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Check the website
+                            <GithubOutlined />
                           </a>,
                         ]
-                      : [<GithubOutlined />]
                   }
                 >
                   <h3 className="font-bold text-lg">{item.title}</h3>
