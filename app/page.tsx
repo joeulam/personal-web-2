@@ -273,8 +273,8 @@ export default function Home() {
               <Card
                 className={`mt-10 ${
                   theme === "dark"
-                    ? "bg-white text-gray-700"
-                    : "bg-white text-black"
+                    ? "bg-white text-gray-700 hover:bg-gray-200 hover:scale-110 duration-700"
+                    : "bg-white text-black hover:bg-gray-100 hover:scale-110 duration-700"
                 }`}
                 title={job.companyTitle}
                 extra={job.date}
@@ -336,29 +336,27 @@ export default function Home() {
                 <Card
                   className={`bg-white border border-gray-200 shadow-none text-black p-6 ${
                     theme === "dark"
-                      ? " bg-gray-300 text-gray-700"
-                      : "bg-white text-black"
+                      ? " bg-gray-300 text-gray-700 hover:bg-gray-200 hover:scale-105 duration-700"
+                      : "bg-white text-black hover:bg-gray-100 hover: hover:scale-105 duration-700"
                   }`}
                   cover={<img alt={item.title} src={item.image} />}
                   actions={
                     item.websiteURL
                       ? [
-                        
-                            <a
-                              href={item.gitURL}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <GithubOutlined />
-                            </a>,
-                            <a
-                              href={item.websiteURL}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Check the website
-                            </a>
-                          
+                          <a
+                            href={item.gitURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <GithubOutlined />
+                          </a>,
+                          <a
+                            href={item.websiteURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Check the website
+                          </a>,
                         ]
                       : [
                           <a
