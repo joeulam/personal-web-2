@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import { Space, Switch } from "antd";
 import { motion } from "framer-motion";
 import NodeBackground from "./nodeBackground";
+import { Footer } from "antd/es/layout/layout";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -378,6 +379,15 @@ export default function Home() {
           )}
         />
       </section>
+      <Footer
+        className={`w-[100vw] ${
+          theme === "dark"
+            ? " bg-gray-800 text-gray-100 "
+            : "bg-white text-black"
+        }`}
+      >
+        <h6>© Copyright 2025 Joey Lam</h6>
+      </Footer>
     </main>
   );
 }
