@@ -308,77 +308,91 @@ export default function Home() {
       {/* Projects Section - Notion-Style */}
       <section
         id="Projects"
-        className="min-h-screen flex flex-col justify-center max-w-2xl w-full"
+        className="min-h-screen flex flex-col justify-center max-w-6xl w-full mx-auto px-6 py-12"
       >
-        <h2 className="text-3xl font-semibold ">Projects</h2>
+        <h2 className="text-3xl font-semibold">Projects</h2>
         <p
           className={`mt-2 mb-6 ${
-            theme === "dark" ? "text-[#c3c5c5] " : "text-gray-500"
+            theme === "dark" ? "text-[#c3c5c5]" : "text-gray-500"
           }`}
-        >{`This is the project section.`}</p>
+        >
+          These are some projects I've worked on recently.
+        </p>
+
         <List
           grid={{
-            gutter: 18,
+            gutter: 24,
             xs: 1,
             sm: 2,
-            md: 2,
-            lg: 2,
-            xl: 2,
+            md: 3,
+            lg: 3,
+            xl: 3,
+            xxl: 4,
           }}
           dataSource={data}
           renderItem={(item, index) => (
             <List.Item>
               <motion.div
-                initial={{ opacity: 0, y: 30 }} // Start slightly below
-                whileInView={{ opacity: 1, y: 0 }} // Slide into view
-                viewport={{ once: true, amount: 0.2 }} // Triggers when 20% is visible
-                transition={{ duration: 0.5, delay: index * 0.1 }} // Stagger effect
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card
-                  className={`bg-white border border-gray-200 shadow-none text-black p-6 ${
-                    theme === "dark"
-                      ? " bg-gray-300 text-gray-700 hover:bg-gray-200 hover:scale-105 duration-700"
-                      : "bg-white text-black hover:bg-gray-100 hover: hover:scale-105 duration-700"
-                  }`}
-                  cover={<img alt={item.title} src={item.image} />}
-                  actions={
-                    item.websiteURL
-                      ? [
-                          <a
-                            href={item.gitURL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <GithubOutlined />
-                          </a>,
-                          <a
-                            href={item.websiteURL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Check the website
-                          </a>,
-                        ]
-                      : [
-                          <a
-                            href={item.websiteURL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <GithubOutlined />
-                          </a>,
-                        ]
+                  hoverable
+                  cover={
+                    <img
+                      alt={item.title}
+                      src={item.image}
+                      className="h-48 w-full object-cover"
+                    />
                   }
+                  className={`transition-all rounded-md shadow-sm ${
+                    theme === "dark"
+                      ? "bg-gray-200 text-black hover:shadow-md"
+                      : "bg-white text-black hover:shadow-lg"
+                  }`}
                 >
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-800">{item.description}</p>
-                  <p className="text-gray-600">Tech Stack: {item.techStack}</p>
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-sm text-gray-700">{item.description}</p>
+                  <p className="text-xs text-gray-500 mt-2 font-mono">
+                    Tech Stack: {item.techStack}
+                  </p>
+
+                  {/* Custom Footer */}
+                  <div className="mt-4 flex justify-between items-center">
+                    {item.gitURL && (
+                      <a
+                        href={item.gitURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-sm font-medium ${
+                          theme === "dark" ? "text-gray-800" : "text-black"
+                        } hover:text-blue-500`}
+                      >
+                        <GithubOutlined />
+                      </a>
+                    )}
+                    {item.websiteURL && (
+                      <a
+                        href={item.websiteURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-sm font-medium ${
+                          theme === "dark" ? "text-gray-800" : "text-black"
+                        } hover:text-blue-500`}
+                      >
+                        Check the website
+                      </a>
+                    )}
+                  </div>
                 </Card>
               </motion.div>
             </List.Item>
           )}
         />
       </section>
+
       <Footer
         className={`w-[100vw] ${
           theme === "dark"

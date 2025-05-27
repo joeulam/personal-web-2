@@ -10,12 +10,12 @@ export const data = [
   },
   {
     key: "2",
-    title: "Bagge (In-progress)",
-    description: "A inventory system.",
-    techStack: "Next.js, Tailwind CSS, OAuth, Ant Design",
-    websiteURL: "https://joeyinventory.vercel.app/",
-    gitURL: "https://github.com/joeulam/lammarktradinginventory",
-    image: "/baggeLogo.png",
+    title: "Invy",
+    description: "Minimalist inventory tracker",
+    techStack: "Next.js, Tailwind CSS, Suprabase, Shadcn",
+    websiteURL: "https://invery.vercel.app/",
+    gitURL: "https://github.com/joeulam/inventorydashboard",
+    image: "/invy.png",
   },
   {
     key: "",
