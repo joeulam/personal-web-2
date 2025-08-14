@@ -103,10 +103,10 @@ export default function Home() {
           <ul className="space-y-4 text-lg font-medium">
             {menuItems.map((item, index) => (
               <motion.li
-                key={`${item}-${isOpen}`} // Change key to force reanimation
-                initial={{ opacity: 0, x: -50 }} // Start off-screen
-                animate={{ opacity: 1, x: 0 }} // Slide into place
-                transition={{ duration: 0.8, delay: index * 0.1 }} // Staggered effect
+                key={`${item}-${isOpen}`} 
+                initial={{ opacity: 0, x: -50 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                transition={{ duration: 0.8, delay: index * 0.1 }} 
                 onClick={() => setIsOpen(false)}
               >
                 <a
@@ -182,11 +182,11 @@ export default function Home() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // Reanimates and triggers when 20% is visible
+          viewport={{ once: true, amount: 0.2 }} 
           transition={{ duration: 1 }}
           variants={{
             visible: { opacity: 1, scale: 1, x: 0 },
-            hidden: { opacity: 0, scale: 1, x: -50 }, // Reduce x distance for smoother effect
+            hidden: { opacity: 0, scale: 1, x: -50 }, 
           }}
         >
           <Card
@@ -264,8 +264,8 @@ export default function Home() {
               key={job.companyTitle}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }} // Triggers when 30% is visible
-              transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger animation
+              viewport={{ once: true, amount: 0.3 }} 
+              transition={{ duration: 0.5, delay: index * 0.2 }} 
               variants={{
                 visible: { opacity: 1, x: 0 },
                 hidden: { opacity: 0, x: -50 },
