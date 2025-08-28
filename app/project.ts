@@ -1,12 +1,21 @@
 export const data = [
   {
+    key: "",
+    title: "Morning brief",
+    description: "Built a “morning brief” web app that combines live commute ETAs with hyperlocal weather and simple advice (e.g., “bring an umbrella”), all in one glance.",
+    techStack: "Next.js, Tailwind CSS, Radix UI, Mapbox, OpenStreetMap, Open-meteo",
+    websiteURL: "https://morning-breif.vercel.app/",
+    gitURL: "https://github.com/joeulam/morning-breif",
+    image: "/morning.png",
+  },
+  {
     key: "1",
     title: "Calico",
-    description: "A financial tracker with a cute and playful twist.",
-    techStack: "Next.js, Tailwind CSS, OAuth, Ant Design, Mantine UI",
+    description: "Built Calico, an AI-powered budgeting app that parses receipts with Gemini 2.5 Flash and turns them into structured transactions, visualizing spend vs. budget with Recharts and Supabase.",
+    techStack: "Next.js, Tailwind CSS, Supabase, Shadcn, Gemini 2.5",
     websiteURL: "https://calicos.vercel.app/",
     gitURL: "https://github.com/joeulam/Calico",
-    image: "/IMG_6407.jpg",
+    image: "/calico.png",
   },
   {
     key: "2",
