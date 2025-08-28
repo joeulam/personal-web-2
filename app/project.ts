@@ -2,8 +2,10 @@ export const data = [
   {
     key: "",
     title: "Morning brief",
-    description: "Built a “morning brief” web app that combines live commute ETAs with hyperlocal weather and simple advice (e.g., “bring an umbrella”), all in one glance.",
-    techStack: "Next.js, Tailwind CSS, Radix UI, Mapbox, OpenStreetMap, Open-meteo",
+    description:
+      "Built a “morning brief” web app that combines live commute ETAs with hyperlocal weather and simple advice (e.g., “bring an umbrella”), all in one glance.",
+    techStack:
+      "Next.js, Tailwind CSS, Radix UI, Mapbox, OpenStreetMap, Open-meteo",
     websiteURL: "https://morning-breif.vercel.app/",
     gitURL: "https://github.com/joeulam/morning-breif",
     image: "/morning.png",
@@ -11,7 +13,8 @@ export const data = [
   {
     key: "1",
     title: "Calico",
-    description: "Built Calico, an AI-powered budgeting app that parses receipts with Gemini 2.5 Flash and turns them into structured transactions, visualizing spend vs. budget with Recharts and Supabase.",
+    description:
+      "Built Calico, an AI-powered budgeting app that parses receipts with Gemini 2.5 Flash and turns them into structured transactions, visualizing spend vs. budget with Recharts and Supabase.",
     techStack: "Next.js, Tailwind CSS, Supabase, Shadcn, Gemini 2.5",
     websiteURL: "https://calicos.vercel.app/",
     gitURL: "https://github.com/joeulam/Calico",
@@ -119,7 +122,13 @@ export const experience = [
     companyTitle: "The Andrew Mellon Foundation",
     jobTitle: "Consultant",
     date: "10/2024 - Present",
-    responsibility: ["Developed and integrated internal taxonomy tree"],
+    responsibility: [
+      `Built a full-stack Next.js and React application to visualize a dynamic taxonomy tree from Airtable, rendering
+                      1,000+ grants with hierarchical parent–child relationships to improve data navigation.`,
+      `Implemented a full-stack Next.js and React application with API integration to render 50+ artworks and locations
+                     from collector system data, delivered 6 months ahead of schedule.`,
+      `Contributed to the Mellon Foundation’s main website, triaging and fixing [10+] UI/visual bugs across responsive breakpoints and browsers, improving layout stability and polish.`
+    ],
   },
   {
     companyTitle: "The Andrew Mellon Foundation",
