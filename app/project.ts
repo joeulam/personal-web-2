@@ -1,6 +1,28 @@
 export const data = [
   {
     key: "",
+    title: "Thrifty (In-Progress)",
+    description:
+      "Marketplace for college students to sell and buy used goods",
+    techStack:
+      "Next.js, Tailwind CSS",
+    websiteURL: "",
+    gitURL: "",
+    image: "/noImg.png",
+  },
+  {
+    key: "",
+    title: "Pbanked (In-Progress)",
+    description:
+      "Phone banking app",
+    techStack:
+      "Next.js, Tailwind CSS",
+    websiteURL: "",
+    gitURL: "",
+    image: "/noImg.png",
+  },
+  {
+    key: "",
     title: "Morning brief",
     description:
       "Built a “morning brief” web app that combines live commute ETAs with hyperlocal weather and simple advice (e.g., “bring an umbrella”), all in one glance.",
