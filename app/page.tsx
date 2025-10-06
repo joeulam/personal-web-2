@@ -305,7 +305,7 @@ export default function Home() {
         </a>
       </motion.section>
 
-      {/* Projects Section - Notion-Style */}
+      {/* Projects Section */}
       <section
         id="Projects"
         className="min-h-screen flex flex-col justify-center max-w-6xl w-full mx-auto px-6 py-12"
