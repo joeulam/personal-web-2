@@ -21,7 +21,7 @@ import { Footer } from "antd/es/layout/layout";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuItems = ["Home", "About", "Resume", "Projects"];
+  const menuItems = ["Home", "About", "Resume", "Projects", "Github"];
   const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
@@ -60,21 +60,30 @@ export default function Home() {
           >
             <MenuOutlined className="text-2xl" />
           </button>
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <ul className="hidden md:flex justify-center w-1/2 m-auto space-x-8 text-lg font-medium">
-            {menuItems.map((item) => (
+            {menuItems.map((item, index) => (
               <motion.li
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 key={item}
               >
-                <a
-                  href={`#${item}`}
-                  className="hover:text-gray-500 transition duration-200 cursor-pointer"
-                >
-                  {item}
-                </a>
+                {index === menuItems.length ? (
+                  <a
+                    href={`#${item}`}
+                    className="hover:text-gray-500 transition duration-200 cursor-pointer"
+                  >
+                    {item}
+                  </a>
+                ) : (
+                  <a
+                    href={`https://github.com/joeulam`}
+                    className="hover:text-gray-500 transition duration-200 cursor-pointer"
+                  >
+                    {item}
+                  </a>
+                )}
               </motion.li>
             ))}
           </ul>
@@ -88,7 +97,7 @@ export default function Home() {
           </Space>
         </div>
 
-        {/* Mobile Drawer Navigation */}
+        {/* Mobile Nav */}
         <Drawer
           className={`${
             theme === "dark"
@@ -103,10 +112,10 @@ export default function Home() {
           <ul className="space-y-4 text-lg font-medium">
             {menuItems.map((item, index) => (
               <motion.li
-                key={`${item}-${isOpen}`} 
-                initial={{ opacity: 0, x: -50 }} 
-                animate={{ opacity: 1, x: 0 }} 
-                transition={{ duration: 0.8, delay: index * 0.1 }} 
+                key={`${item}-${isOpen}`}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 onClick={() => setIsOpen(false)}
               >
                 <a
@@ -131,7 +140,6 @@ export default function Home() {
         </Drawer>
       </nav>
 
-      {/* Hero Section */}
       <section
         id="Home"
         className="h-screen flex flex-col justify-center text-center"
@@ -182,11 +190,11 @@ export default function Home() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} 
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1 }}
           variants={{
             visible: { opacity: 1, scale: 1, x: 0 },
-            hidden: { opacity: 0, scale: 1, x: -50 }, 
+            hidden: { opacity: 0, scale: 1, x: -50 },
           }}
         >
           <Card
@@ -264,8 +272,8 @@ export default function Home() {
               key={job.companyTitle}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }} 
-              transition={{ duration: 0.5, delay: index * 0.2 }} 
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               variants={{
                 visible: { opacity: 1, x: 0 },
                 hidden: { opacity: 0, x: -50 },
