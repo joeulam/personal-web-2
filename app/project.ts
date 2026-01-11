@@ -5,7 +5,7 @@ export const data = [
     description:
       "A full stack application created to display and share my favorite photos",
     techStack:
-      "Next.js, Tailwind CSS",
+      "Next.js, Tailwind CSS, Supabase, HeroUI",
     websiteURL: "https://jlgallery.vercel.app/",
     gitURL: "https://github.com/joeulam/photoweb",
     image: "/jphoto.png",
