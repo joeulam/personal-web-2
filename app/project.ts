@@ -1,6 +1,17 @@
 export const data = [
   {
     key: "",
+    title: "Jlgallery",
+    description:
+      "A full stack application created to display and share my favorite photos",
+    techStack:
+      "Next.js, Tailwind CSS",
+    websiteURL: "https://jlgallery.vercel.app/",
+    gitURL: "https://github.com/joeulam/photoweb",
+    image: "/jphoto.png",
+  },
+  {
+    key: "",
     title: "Thrifty (In-Progress)",
     description:
       "Marketplace for college students to sell and buy used goods",
@@ -12,7 +23,7 @@ export const data = [
   },
   {
     key: "",
-    title: "Pbanked (In-Progress)",
+    title: "Powerline (In-Progress)",
     description:
       "Phone banking app",
     techStack:
