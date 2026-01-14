@@ -222,7 +222,7 @@ export default function Home() {
 
             <div>
               <h3 className="md:text-2xl text-base">
-                Hi, my name is Joey Lam! I'm a second-year student at Boston
+                Hi, my name is Joey Lam! I'm a Third-year student at Boston
                 University, studying Computer Science and Economics. I'm
                 passionate about cutting-edge technologies in the tech sector!
                 My hobbies include crocheting, woodworking, and playing ping
