@@ -69,7 +69,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 key={item}
               >
-                {index === menuItems.length ? (
+                {index !== menuItems.length - 1 ? (
                   <a
                     href={`#${item}`}
                     className="hover:text-gray-500 transition duration-200 cursor-pointer"
