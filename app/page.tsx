@@ -363,9 +363,20 @@ export default function Home() {
                 >
                   <h3 className="font-semibold text-lg">{item.title}</h3>
                   <p className="text-sm text-gray-700">{item.description}</p>
-                  <p className="text-xs text-gray-500 mt-2 font-mono">
-                    Tech Stack: {item.techStack}
-                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {item.techStack.split(", ").map((tech) => (
+                      <span
+                        key={tech}
+                        className={`inline-flex items-center px-3 py-1 text-xs font-medium rounded-full border transition-colors duration-200 hover:scale-105 ${
+                          theme === "dark"
+                            ? "border-accent-500/30 bg-accent-500/10 text-accent-300 hover:bg-accent-500/20"
+                            : "border-accent-300 bg-accent-50 text-accent-600 hover:bg-accent-100"
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
                   {/* Custom Footer */}
                   <div className="mt-4 flex justify-between items-center">
