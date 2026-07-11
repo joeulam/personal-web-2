@@ -1,0 +1,72 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.section--about {
+  @include section-container($max-width: 42rem);
+
+  .about-card {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: background-color $transition-normal, color $transition-normal;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    margin-bottom: $space-4;
+
+    h2 {
+      font-size: $text-4xl;
+      font-weight: 600;
+
+      @include respond-to(md) {
+        font-size: $text-5xl;
+      }
+    }
+  }
+
+  &__description {
+    font-size: $text-base;
+    margin-top: $space-2;
+    color: var(--text-secondary);
+
+    @include respond-to(md) {
+      font-size: $text-2xl;
+    }
+  }
+
+  &__bio {
+    font-size: $text-base;
+
+    @include respond-to(md) {
+      font-size: $text-2xl;
+    }
+  }
+
+  &__socials {
+    margin-top: $space-10;
+
+    h2 {
+      font-size: $text-base;
+
+      @include respond-to(md) {
+        font-size: $text-2xl;
+      }
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    width: 33.333%;
+    margin-top: $space-5;
+
+    svg {
+      font-size: 150%;
+      cursor: pointer;
+    }
+  }
+}

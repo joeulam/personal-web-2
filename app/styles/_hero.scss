@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hero {
+  height: 100vh;
+  @include flex-col;
+  justify-content: center;
+  text-align: center;
+
+  &__title {
+    font-size: $text-5xl;
+    font-weight: 700;
+    margin-bottom: $space-4;
+    letter-spacing: -0.025em;
+
+    @include respond-to(md) {
+      font-size: $text-7xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $text-xl;
+    font-weight: 300;
+    color: var(--text-secondary);
+
+    span {
+      color: var(--text-primary);
+    }
+  }
+}

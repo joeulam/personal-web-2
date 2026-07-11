@@ -1,0 +1,17 @@
+// Variables & Mixins (must come first)
+@use 'variables';
+@use 'mixins';
+
+// Base styles
+@use 'base';
+
+// Animations
+@use 'animations';
+
+// Component styles
+@use 'nav';
+@use 'hero';
+@use 'about';
+@use 'resume';
+@use 'projects';
+@use 'footer';

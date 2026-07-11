@@ -1,0 +1,112 @@
+@use 'sass:color';
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Spacing
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+
+// Font sizes
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$text-5xl: 3rem;
+$text-7xl: 4.5rem;
+
+// Border radius
+$radius-sm: 0.25rem;
+$radius-md: 0.375rem;
+$radius-lg: 0.5rem;
+$radius-xl: 0.75rem;
+$radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+// Transitions
+$transition-fast: 200ms;
+$transition-normal: 500ms;
+$transition-slow: 700ms;
+
+// Z-index
+$z-nav: 50;
+$z-drawer: 1000;
+
+// Accent colors (teal)
+$accent-50: #f0fdfa;
+$accent-100: #ccfbf1;
+$accent-300: #5eead4;
+$accent-500: #14b8a6;
+$accent-600: #0d9488;
+
+// Dark accent overrides (pre-computed)
+$accent-50-dark: color.adjust($accent-50, $lightness: -10%);
+$accent-100-dark: color.adjust($accent-100, $lightness: -10%);
+
+// Theme colors - Light
+:root,
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border-color: #e5e7eb;
+  --nav-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-hover-bg: #f3f4f6;
+  --footer-bg: #ffffff;
+  --footer-text: #111827;
+  --accent-50: #{$accent-50};
+  --accent-100: #{$accent-100};
+  --accent-300: #{$accent-300};
+  --accent-500: #{$accent-500};
+  --accent-600: #{$accent-600};
+  --tag-border: #{color.adjust($accent-300, $alpha: -0.7)};
+  --tag-bg: #{color.adjust($accent-50, $alpha: -0.5)};
+  --tag-text: #{$accent-600};
+  --tag-hover-bg: #{color.adjust($accent-100, $alpha: -0.5)};
+  --link-hover: #3b82f6;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #c3c5c5;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+  --nav-bg: #111827;
+  --card-bg: #111827;
+  --card-hover-bg: #1f2937;
+  --footer-bg: #1f2937;
+  --footer-text: #f3f4f6;
+  --accent-50: #{$accent-50-dark};
+  --accent-100: #{$accent-100-dark};
+  --accent-300: #{$accent-300};
+  --accent-500: #{$accent-500};
+  --accent-600: #{$accent-600};
+  --tag-border: #{color.adjust($accent-500, $alpha: -0.7)};
+  --tag-bg: #{color.adjust($accent-500, $alpha: -0.9)};
+  --tag-text: #{$accent-300};
+  --tag-hover-bg: #{color.adjust($accent-500, $alpha: -0.8)};
+  --link-hover: #60a5fa;
+}
