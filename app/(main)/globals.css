@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk";
+  --font-sans: "Space Grotesk";
+  --font-mono: "JetBrains Mono";
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+
+  ::selection {
+    background: #1c1c1a;
+    color: #e9e6e0;
+  }
+
+  :focus-visible {
+    outline: 2px solid #a93b26;
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+}
+
+@layer components {
+  .call-no {
+    @apply font-mono text-xs tracking-[0.08em] text-mute;
+  }
+
+  .text-link {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: #b9b6ad;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.25s ease, color 0.25s ease;
+  }
+  .text-link:hover {
+    color: #a93b26;
+    text-decoration-color: #a93b26;
+  }
+}
+
+/* ── engine ambient animations ─────────────────────────────────────────── */
+
+@keyframes fw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.fw-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fw-spin 22s linear infinite;
+}
+
+@keyframes piston-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+.piston-bob {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: piston-bob 2.8s ease-in-out infinite;
+}
+.piston-bob.b1 {
+  animation-delay: 0.5s;
+}
+.piston-bob.b2 {
+  animation-delay: 1s;
+}
+
+@keyframes spark-blink {
+  0%,
+  88%,
+  100% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 1;
+  }
+}
+.spark-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-blink 4.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fw-spin,
+  .piston-bob,
+  .spark-blink {
+    animation: none !important;
+  }
+}
