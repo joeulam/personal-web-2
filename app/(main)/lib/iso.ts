@@ -55,11 +55,13 @@ export const CALLOUT_ANCHORS = (() => {
   const crateEdge = iso(245, 40, 70);
   const chassisCorner = iso(-8, 102, 30);
   const doorEdge = iso(190, 113, 100);
+  const wheelFrontLeft = iso(46, 104, -13);
 
   return [
     { ax: roofPeak[0] + EXD.head[0], ay: roofPeak[1] + EXD.head[1] },
     { ax: crateEdge[0] + EXD.cyl[3][0], ay: crateEdge[1] + EXD.cyl[3][1] },
     { ax: chassisCorner[0] + EXD.crank[0], ay: chassisCorner[1] + EXD.crank[1] },
     { ax: doorEdge[0] + EXD.fw[0], ay: doorEdge[1] + EXD.fw[1] },
+    { ax: wheelFrontLeft[0] + EXD.pan[0], ay: wheelFrontLeft[1] + EXD.pan[1] },
   ];
 })();

@@ -185,6 +185,16 @@ export const experience = [
     ],
   },
   {
+    companyTitle: "Ford Foundation",
+    jobTitle: "IT Intern",
+    date: "6/2026 - 8/2026",
+    responsibility: [
+      `Engineered a full-stack document verification app using NLPs, LLMs, OCR, and PDF parsing to cross-check grant compliance data against Fluxx payments with state persistence and automated error recovery; presented a POC to leadership, securing buy-in to expand system scope to presidential workflows and grant compliance.`,
+      `Co-led the Jama-to-Monday.com systems migration by authoring schema field mappings, archive policies, and tracking dashboards, while managing release readiness and status logs to streamline new issue deployments.`,
+      `Diagnosed and isolated 10+ critical backend defects including a high-impact Payment Funding Source recalculation bug.`,
+    ],
+  },
+  {
     companyTitle: "The Andrew Mellon Foundation",
     date: "06/2024 - 08/2024",
     jobTitle: "IT Intern",

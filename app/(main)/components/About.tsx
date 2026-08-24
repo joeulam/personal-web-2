@@ -28,8 +28,8 @@ export function About() {
 
   return (
     <section id="about" className="border-t border-rule px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto grid max-w-[1200px] gap-12 md:grid-cols-[300px_1fr] md:gap-16">
-        <figure ref={aboutRef} className="about-pop max-w-[300px]" style={{ opacity: 0 }}>
+      <div ref={aboutRef} className="mx-auto grid max-w-[1200px] gap-12 md:grid-cols-[300px_1fr] md:gap-16">
+        <figure className="about-pop max-w-[300px]" style={{ opacity: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/headshot.png"
@@ -37,7 +37,7 @@ export function About() {
             className="aspect-[4/5] w-full border border-rule object-cover"
           />
           <figcaption className="mt-3 font-mono text-xs text-mute">
-            Fig. 1 — the maker, Boston
+            Me
           </figcaption>
         </figure>
         <div>
