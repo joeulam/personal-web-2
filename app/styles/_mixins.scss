@@ -1,12 +1,10 @@
+@use 'variables' as *;
+
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
-  } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
+  @if $breakpoint == md {
+    @media (min-width: $bp-md) { @content; }
   } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
-  } @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
+    @media (min-width: $bp-lg) { @content; }
   }
 }
 
@@ -27,13 +25,17 @@
   flex-direction: column;
 }
 
-@mixin section-container($max-width: 100%) {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: $max-width;
-  width: 100%;
-  margin: 0 auto;
-  padding: $space-12 0;
+@mixin u-caps {
+  font-family: $font-sans;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+%caps-note {
+  font-family: $font-sans;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
 }

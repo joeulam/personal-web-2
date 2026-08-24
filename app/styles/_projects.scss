@@ -1,88 +1,144 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.section--projects {
-  @include section-container($max-width: 72rem);
-  padding-left: $space-6;
-  padding-right: $space-6;
+// ---------------------------------------------------------------------------
+// Projects — banner panel 04, the works grid
+// ---------------------------------------------------------------------------
+.works {
+  display: grid;
+  gap: $space-5;
+  grid-template-columns: 1fr;
 
-  &__title {
-    font-size: $text-3xl;
-    font-weight: 600;
+  @media (min-width: $bp-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    border-color: var(--rule-strong);
+    box-shadow: 4px 4px 0 var(--shadow);
+
+    .work__shot img {
+      transform: scale(1.035);
+    }
   }
 
-  &__description {
-    margin-top: $space-2;
-    margin-bottom: $space-6;
-    color: var(--text-secondary);
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-3 $space-4;
+    border-bottom: 1px solid var(--rule);
+    @extend %caps-note;
+    letter-spacing: 0.22em;
+    color: var(--ink-3);
   }
 
-  &__card {
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    border-radius: $radius-md;
-    box-shadow: $shadow-sm;
-    transition: background-color $transition-normal, color $transition-normal, box-shadow $transition-normal;
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    letter-spacing: 0.2em;
 
-    &:hover {
-      box-shadow: $shadow-lg;
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .ant-card-cover img {
-      height: 12rem;
+    &--live::before {
+      background: var(--accent);
+    }
+
+    &--wip::before {
+      background: var(--rule-strong);
+    }
+  }
+
+  &__id {
+    color: var(--ink-3);
+    letter-spacing: 0.26em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__shot {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+    background: var(--ink-3);
+    display: flex;
+
+    img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
+      filter: grayscale(1) contrast(1.01);
+      transition: transform $transition-slow;
     }
   }
 
-  &__card-title {
-    font-weight: 600;
-    font-size: $text-lg;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    padding: $space-4;
   }
 
-  &__card-description {
-    font-size: $text-sm;
-    color: var(--text-secondary);
+  &__name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 0% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      transition: background-size $transition-fast;
+
+      &:hover {
+        background-size: 100% 1px;
+      }
+    }
+  }
+
+  &__desc {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--ink-2);
+    flex-grow: 1;
   }
 
   &__tags {
     display: flex;
     flex-wrap: wrap;
     gap: $space-2;
-    margin-top: $space-4;
   }
 
-  &__tag {
-    display: inline-flex;
-    align-items: center;
-    padding: $space-1 $space-3;
-    font-size: $text-xs;
-    font-weight: 500;
-    border-radius: $radius-full;
-    border: 1px solid var(--tag-border);
-    background-color: var(--tag-bg);
-    color: var(--tag-text);
-    transition: background-color $transition-fast, transform $transition-fast;
-
-    &:hover {
-      background-color: var(--tag-hover-bg);
-      transform: scale(1.05);
-    }
+  &__links {
+    display: flex;
+    gap: $space-3;
+    flex-wrap: wrap;
   }
+}
 
-  &__card-footer {
-    margin-top: $space-4;
-    @include flex-between;
-
-    a {
-      font-size: $text-sm;
-      font-weight: 500;
-      color: var(--text-primary);
-      transition: color $transition-fast;
-
-      &:hover {
-        color: var(--link-hover);
-      }
-    }
-  }
+.resource-tag {
+  @extend %caps-note;
+  font-size: 0.54rem;
+  letter-spacing: 0.2em;
+  padding: $space-1 $space-2;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  background: var(--bg);
 }

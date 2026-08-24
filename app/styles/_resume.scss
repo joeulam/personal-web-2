@@ -1,57 +1,67 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.section--resume {
-  @include section-container($max-width: 42rem);
+// ---------------------------------------------------------------------------
+// Resume — banner panel 03, the posting ledger
+// ---------------------------------------------------------------------------
+.ledger {
+  border-top: 1px solid var(--rule-strong);
+}
 
-  &__title {
-    font-size: $text-3xl;
-    font-weight: 600;
+.posting {
+  padding: $space-5 0;
+  border-bottom: 1px solid var(--rule);
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: $space-3;
+    margin-bottom: $space-3;
   }
 
-  &__description {
-    margin-top: $space-2;
-    color: var(--text-secondary);
+  &__company {
+    font-size: 1.06rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
 
-  &__card {
-    margin-top: $space-10;
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    transition: background-color $transition-normal, color $transition-normal, transform $transition-slow, box-shadow $transition-slow;
+  &__role {
+    @extend %caps-note;
+    color: var(--ink-2);
+    letter-spacing: 0.24em;
+  }
 
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: $shadow-lg;
+  &__date {
+    margin-left: auto;
+    @extend %caps-note;
+    color: var(--accent);
+    letter-spacing: 0.22em;
+    font-variant-numeric: tabular-nums;
+  }
 
-      @include respond-to(dark) {
-        background-color: var(--card-hover-bg);
-      }
+  &__log {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+
+    li {
+      display: flex;
+      gap: $space-3;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink-2);
     }
   }
+}
 
-  &__job-title {
-    font-weight: 500;
-  }
+.bullet {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-weight: 900;
+}
 
-  &__responsibilities-title {
-    font-weight: 500;
-    margin-top: $space-2;
-  }
-
-  &__responsibilities {
-    list-style-type: disc;
-    list-style-position: inside;
-    color: var(--text-secondary);
-    margin-top: $space-1;
-  }
-
-  &__cv-link {
-    margin-top: $space-5;
-    display: inline-block;
-
-    .ant-btn {
-      width: 100%;
-    }
-  }
+.section--resume__cv {
+  margin-top: $space-6;
 }

@@ -1,30 +1,189 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// ---------------------------------------------------------------------------
+// Hero — the opening banner panel
+// ---------------------------------------------------------------------------
 .hero {
-  height: 100vh;
-  @include flex-col;
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  padding: $space-9 $space-5 $space-7;
+  margin: 0 -$space-5;
+
+  @media (min-width: $bp-md) {
+    padding: $space-9 $space-7 $space-7;
+    margin: 0 -$space-7;
+  }
+
+  &__eyebrow {
+    @include u-caps;
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    color: var(--ink-3);
+    margin-bottom: $space-6;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      width: 48px;
+      background: var(--rule-strong);
+    }
+  }
 
   &__title {
-    font-size: $text-5xl;
-    font-weight: 700;
-    margin-bottom: $space-4;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.6rem, 9vw, 5.2rem);
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    line-height: 1.05;
 
-    @include respond-to(md) {
-      font-size: $text-7xl;
+    .hero__title-han {
+      display: block;
+      margin-top: $space-3;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.5em;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      font-family: $font-sans;
     }
   }
 
   &__subtitle {
-    font-size: $text-xl;
-    font-weight: 300;
-    color: var(--text-secondary);
+    margin-top: $space-6;
+    font-size: 1.06rem;
+    color: var(--ink-2);
+    display: flex;
+    gap: $space-3;
+    min-height: 2.2em;
+    align-items: baseline;
 
-    span {
-      color: var(--text-primary);
+    .hero__subtitle-prefix {
+      @extend %caps-note;
+      color: var(--ink-3);
+    }
+
+    .Typewriter__wrapper {
+      color: var(--ink);
+      font-weight: 500;
     }
   }
+
+  &__route {
+    margin-top: $space-4;
+    @include u-caps;
+    color: var(--ink-3);
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    margin-top: $space-7;
+  }
+
+  &__seal {
+    position: absolute;
+    top: $space-8;
+    right: 8%;
+    opacity: 0.92;
+    box-shadow: 4px 4px 0 var(--shadow);
+    transform: rotate(-8deg);
+
+    @media (max-width: $bp-md) {
+      top: $space-4;
+      right: $space-4;
+      width: 44px;
+      height: 44px;
+      font-size: 26px;
+    }
+  }
+
+&__scroll-cue {
+    position: absolute;
+    bottom: $space-9;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-2;
+    @include u-caps;
+    color: var(--ink-3);
+
+    @media (max-width: $bp-md) {
+      bottom: $space-8;
+    }
+
+    i {
+      width: 1px;
+      height: 44px;
+      background: var(--ink-3);
+      transform-origin: 50% 0;
+      animation: scroll-sink 2.2s ease-in-out infinite;
+    }
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: $space-3 $space-4;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  cursor: default;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: var(--rule-strong);
+  }
+
+  .stat__han {
+    @extend %caps-note;
+    color: var(--ink-3);
+    font-weight: 700;
+    letter-spacing: 0.34em;
+  }
+
+  .stat__value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+  }
+
+  .stat__en {
+    @extend %caps-note;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+  }
+}
+
+.stat--click {
+  cursor: pointer;
+  border-color: var(--rule-strong);
+  transition: border-color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    border-color: var(--accent);
+
+    .stat__value {
+      color: var(--accent);
+    }
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.hero__keys {
+  margin-top: $space-6;
+  @extend %caps-note;
+  color: var(--ink-3);
 }

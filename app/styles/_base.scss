@@ -1,46 +1,554 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
+// ---------------------------------------------------------------------------
+// Base — the tea poster
+// ---------------------------------------------------------------------------
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 html {
-  width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-inter, 'Inter', sans-serif);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color $transition-normal, color $transition-normal;
+  font-family: $font-display;
+  background: var(--bg);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
-ul {
-  list-style: none;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 img {
+  display: block;
   max-width: 100%;
-  height: auto;
 }
 
-button {
+kbd {
+  font-family: $font-sans;
+  font-size: 0.72em;
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--rule-strong);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: var(--paper);
+}
+
+.page {
+  position: relative;
+  z-index: $z-content;
+}
+
+.page--alarm {
+  animation: shake 0.18s linear infinite;
+}
+
+// ---------------------------------------------------------------------------
+// Poster — the single scroll column with banner panels
+// ---------------------------------------------------------------------------
+.poster {
+  width: 100%;
+  max-width: $poster-w;
+  margin: 0 auto;
+  padding: 76px $space-5 $space-8;
+
+  @media (min-width: $bp-md) {
+    padding: 92px $space-7 $space-9;
+  }
+}
+
+// Banner panel — separated by a full-width hairline rule
+.panel {
+  position: relative;
+  padding: $space-9 0;
+
+  & + & {
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: $bp-md) {
+    padding: $space-7 0;
+  }
+}
+
+// The left-edge vertical text column (like the pin's vertical rubric)
+.rail {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $rail-w;
+  writing-mode: vertical-rl;
+  font-family: $font-sans;
+  font-size: 0.58rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    right: 0;
+    width: 1px;
+    background: var(--rule-strong);
+  }
+
+  @media (min-width: $bp-lg) {
+    display: flex;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Chapter head — small caps eyebrow + display title with growing rule
+// ---------------------------------------------------------------------------
+.chap__head {
+  display: flex;
+  align-items: baseline;
+  gap: $space-4;
+  margin-bottom: $space-5;
+
+  .chap__no {
+    @include u-caps;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.35em;
+  }
+
+  .chap__title {
+    font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.15;
+  }
+
+  .chap__en {
+    @extend %caps-note;
+    font-size: 0.6rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-top: 1.4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chap__rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule-strong);
+    margin-left: $space-2;
+    align-self: center;
+    overflow: hidden;
+
+    .chap__rule__fill {
+      display: block;
+      height: 100%;
+      background: var(--ink);
+      transform-origin: 0% 50%;
+    }
+  }
+
+.chap__count {
+    @extend %caps-note;
+    color: var(--ink-3);
+    white-space: nowrap;
+
+    @media (max-width: ($bp-md - 1px)) {
+      display: none;
+    }
+  }
+}
+
+.chap__desc {
+  max-width: 56ch;
+  margin: -$space-3 0 $space-7 0;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+
+// ---------------------------------------------------------------------------
+// Tea ware — bold ink line drawings
+// ---------------------------------------------------------------------------
+.teaware {
+  position: absolute;
+  color: var(--teaware);
+  pointer-events: none;
+  user-select: none;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  path,
+  circle,
+  ellipse {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: ink-draw 1.15s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+}
+
+.panel > :not(.teaware):not(.rail) {
+  position: relative;
+  z-index: 1;
+}
+
+.teaware--hero {
+  display: none;
+  top: $space-6;
+  right: 2%;
+  width: 330px;
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
+}
+
+.teaware--about {
+  display: none;
+  top: $space-8;
+  right: 2%;
+  width: 220px;
+  transform: rotate(2deg);
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
+}
+
+.teaware--resume {
+  display: none;
+  top: $space-7;
+  right: 2%;
+  width: 200px;
+  transform: rotate(-3deg);
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
+}
+
+.teaware--projects {
+  display: none;
+  top: -$space-5;
+  right: 2%;
+  width: 300px;
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
+}
+
+.teaware--footer {
+  position: static;
+  width: 140px;
+  margin: 0 auto $space-5;
+}
+
+// ---------------------------------------------------------------------------
+// Ink band — the dark slab capping the outer panels (light type on ink)
+// ---------------------------------------------------------------------------
+.panel__band {
+  margin: $space-8 -$space-5 -$space-7;
+  padding: $space-5 $space-5;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: $font-sans;
+  font-size: 0.6rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+
+  span {
+    opacity: 0.92;
+  }
+
+  @media (min-width: $bp-md) {
+    margin: $space-9 -$space-7 -$space-8;
+    padding: $space-5 $space-7;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Seals — the one vermilion accent, monogram only
+// ---------------------------------------------------------------------------
+.seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: $font-display;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1;
+  border-radius: 4px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.seal--sm {
+  width: 24px;
+  height: 24px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.seal--md {
+  width: 68px;
+  height: 68px;
+  font-size: 40px;
+  border-radius: 6px;
+}
+
+.seal--x {
+  border-radius: 50%;
+}
+
+// ---------------------------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------------------------
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--ink);
+  font-family: $font-sans;
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
-  border: none;
-  background: none;
-  font: inherit;
+  transition: background $transition-fast, color $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Menu overlay
+// ---------------------------------------------------------------------------
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-overlay;
+  background: var(--overlay-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-7;
+  backdrop-filter: blur(4px);
+
+  &__head {
+    @include u-caps;
+    color: var(--ink-3);
+    border: 1px solid var(--rule);
+    padding: $space-2 $space-4;
+    transform: translateY(-$space-5);
+  }
+
+  &__close {
+    position: absolute;
+    top: $space-5;
+    right: $space-5;
+    background: none;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink);
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+
+  &__link {
+    display: flex;
+    align-items: baseline;
+    gap: $space-4;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: $space-2 $space-4;
+    opacity: 0.82;
+    transition: opacity $transition-fast;
+
+    .menu-overlay__han {
+      @include u-caps;
+      color: var(--ink-3);
+      font-size: 0.7rem;
+      letter-spacing: 0.34em;
+    }
+
+    .seal {
+      opacity: 0;
+      transform: scale(0.4) rotate(-12deg);
+      transition: opacity $transition-fast, transform $transition-fast;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      .seal {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+  }
+
+  &__footer {
+    @include u-caps;
+    color: var(--ink-3);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Alarm toast (easter egg notice)
+// ---------------------------------------------------------------------------
+.alarm-toast {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $z-overlay;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  padding: $space-3 $space-5;
+  font-family: $font-sans;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+// ---------------------------------------------------------------------------
+// Reduced motion & misc overrides
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// CITY the Three.js easter egg overlay
+// ---------------------------------------------------------------------------
+.egg {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: #faf9f4;
+  overflow: hidden;
+
+  &__viewport {
+    position: absolute;
+    inset: 0;
+
+    canvas {
+      display: block;
+    }
+  }
+
+  &__frame-top {
+    position: absolute;
+    top: $space-4;
+    left: $space-4;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    @include u-caps;
+    color: #6b675c;
+  }
+
+  &__hud-bottom {
+    position: absolute;
+    left: $space-4;
+    right: $space-4;
+    bottom: $space-4;
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+  }
+
+  &__readout {
+    @include u-caps;
+    color: #3c3a34;
+    white-space: nowrap;
+  }
+
+  &__progress {
+    flex: 1;
+    height: 3px;
+    background: rgba(60, 55, 45, 0.1);
+    border: 1px solid #d8d4c8;
+    overflow: hidden;
+
+    i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: #22211c;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

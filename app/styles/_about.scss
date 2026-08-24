@@ -1,72 +1,150 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.section--about {
-  @include section-container($max-width: 42rem);
+// ---------------------------------------------------------------------------
+// About — banner panel 02
+// ---------------------------------------------------------------------------
+.about-grid {
+  display: grid;
+  gap: $space-7;
+  grid-template-columns: 1fr;
 
-  .about-card {
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    transition: background-color $transition-normal, color $transition-normal;
+  @media (min-width: $bp-lg) {
+    grid-template-columns: 240px 1fr;
+    gap: $space-8;
+  }
+}
+
+.portrait {
+  position: relative;
+
+  img {
+    width: 100%;
+    border: 1px solid var(--rule-strong);
+    filter: grayscale(1) contrast(1.02);
+    background: var(--paper);
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-    gap: $space-4;
-    margin-bottom: $space-4;
-
-    h2 {
-      font-size: $text-4xl;
-      font-weight: 600;
-
-      @include respond-to(md) {
-        font-size: $text-5xl;
-      }
-    }
-  }
-
-  &__description {
-    font-size: $text-base;
+  &__caption {
+    display: block;
     margin-top: $space-2;
-    color: var(--text-secondary);
+    @extend %caps-note;
+    color: var(--ink-3);
+    letter-spacing: 0.26em;
+  }
+}
 
-    @include respond-to(md) {
-      font-size: $text-2xl;
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  p {
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-2);
+    max-width: 62ch;
+  }
+}
+
+.sub-head {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin: $space-7 0 $space-4;
+  @include u-caps;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.32em;
+
+  &::after {
+    content: "";
+    flex: 1;
+    max-width: 160px;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+}
+
+.hobbies {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: $space-3;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+}
+
+.hobby-tag {
+  min-width: 148px;
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.skill {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: $space-2;
+
+    .skill__name {
+      @extend %caps-note;
+      color: var(--ink-2);
+      letter-spacing: 0.18em;
+
+      b {
+        color: var(--ink);
+        font-weight: 700;
+      }
+    }
+
+    .skill__level {
+      @extend %caps-note;
+      color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
     }
   }
 
-  &__bio {
-    font-size: $text-base;
+  &__track {
+    height: 2px;
+    background: var(--rule);
+    position: relative;
+    overflow: hidden;
 
-    @include respond-to(md) {
-      font-size: $text-2xl;
-    }
-  }
+    .skill__fill {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
 
-  &__socials {
-    margin-top: $space-10;
-
-    h2 {
-      font-size: $text-base;
-
-      @include respond-to(md) {
-        font-size: $text-2xl;
+      .skill__fill__inner {
+        display: block;
+        height: 100%;
+        background: var(--ink);
       }
     }
   }
+}
 
-  &__social-icons {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    width: 33.333%;
-    margin-top: $space-5;
-
-    svg {
-      font-size: 150%;
-      cursor: pointer;
-    }
-  }
+.comm-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
 }

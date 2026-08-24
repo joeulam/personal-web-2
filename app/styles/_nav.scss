@@ -1,86 +1,198 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// ---------------------------------------------------------------------------
+// Nav — a hairline strip above the poster
+// ---------------------------------------------------------------------------
 .nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: $z-nav;
-  background-color: var(--nav-bg);
-  color: var(--text-primary);
-  transition: background-color $transition-normal, color $transition-normal;
+  background: var(--nav-bg);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+}
 
-  &__inner {
-    @include flex-between;
-    padding: $space-4 $space-6;
+.nav__inner {
+  max-width: $poster-w;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: $space-5;
+  padding: $space-3 $space-5;
 
-    @include respond-to(md) {
-      padding: $space-4 $space-10;
+  @media (min-width: $bp-md) {
+    padding: $space-3 $space-7;
+  }
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-family: $font-display;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  color: var(--ink);
+  margin-right: auto;
+
+  &:hover {
+    .seal {
+      transform: rotate(-8deg);
     }
   }
 
-  &__menu-btn {
+  .seal {
+    transition: transform $transition-fast;
+  }
+}
+
+.nav__links {
+  display: none;
+  list-style: none;
+  gap: $space-5;
+
+  @media (min-width: $bp-md) {
+    display: flex;
+  }
+}
+
+.nav__link {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  text-decoration: none;
+  color: var(--ink-2);
+  font-family: $font-sans;
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: $space-2 0;
+  position: relative;
+  transition: color $transition-fast;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform $transition-fast;
+  }
+
+  &-han {
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &:hover {
+    color: var(--ink);
+  }
+
+  &:hover::after,
+  &--active::after {
+    transform: scaleX(1);
+  }
+
+  &--active {
+    color: var(--ink);
+
+    .nav__link-han {
+      color: var(--accent);
+    }
+  }
+}
+
+.nav__aside {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.nav__status {
+  display: none;
+  @include u-caps;
+  color: var(--ink-2);
+
+  b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  @media (min-width: $bp-md) {
+    display: inline;
+  }
+}
+
+.nav__aside-divider {
+  display: none;
+  width: 1px;
+  height: 16px;
+  background: var(--rule-strong);
+
+  @media (min-width: $bp-md) {
     display: block;
-    font-size: $text-2xl;
+  }
+}
 
-    @include respond-to(md) {
-      display: none;
-    }
+.nav__gh {
+  display: none;
+  @include u-caps;
+  color: var(--ink-2);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--accent);
   }
 
-  &__links {
+  @media (min-width: $bp-md) {
+    display: inline;
+  }
+}
+
+.tone {
+  background: none;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  font-family: $font-sans;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  padding: $space-2 $space-3;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+}
+
+.nav__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  @media (min-width: $bp-md) {
     display: none;
-    @include flex-center;
-    width: 50%;
-    margin: 0 auto;
-    gap: $space-8;
-    font-size: $text-lg;
-    font-weight: 500;
-
-    @include respond-to(md) {
-      display: flex;
-    }
-  }
-
-  &__link {
-    transition: color $transition-fast;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--text-muted);
-    }
-  }
-
-  &__theme-toggle {
-    display: none;
-
-    @include respond-to(md) {
-      display: flex;
-    }
-  }
-
-  &__drawer {
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: $space-4;
-      font-size: $text-lg;
-      font-weight: 500;
-    }
-
-    a {
-      display: block;
-      transition: color $transition-fast;
-      cursor: pointer;
-
-      &:hover {
-        color: var(--text-muted);
-      }
-    }
-  }
-
-  &__drawer-theme {
-    margin-top: $space-4;
   }
 }
