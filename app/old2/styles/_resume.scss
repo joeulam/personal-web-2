@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.section--resume {
+  @include section-container($max-width: 42rem);
+
+  &__title {
+    font-size: $text-3xl;
+    font-weight: 600;
+  }
+
+  &__description {
+    margin-top: $space-2;
+    color: var(--text-secondary);
+  }
+
+  &__card {
+    margin-top: $space-10;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    transition: background-color $transition-normal, color $transition-normal, transform $transition-slow, box-shadow $transition-slow;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $shadow-lg;
+
+      @include respond-to(dark) {
+        background-color: var(--card-hover-bg);
+      }
+    }
+  }
+
+  &__job-title {
+    font-weight: 500;
+  }
+
+  &__responsibilities-title {
+    font-weight: 500;
+    margin-top: $space-2;
+  }
+
+  &__responsibilities {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: var(--text-secondary);
+    margin-top: $space-1;
+  }
+
+  &__cv-link {
+    margin-top: $space-5;
+    display: inline-block;
+
+    .ant-btn {
+      width: 100%;
+    }
+  }
+}

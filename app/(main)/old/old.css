@@ -1,0 +1,239 @@
+/* Restored legacy stylesheet for app/old/page.tsx.
+   Source: git 57aaba0 — app/globals.css. Every rule is scoped under `.legacy`
+   (the wrapper on the old page's <main>) so it cannot affect the new design. */
+
+.legacy,
+.legacy * {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.legacy *::-webkit-scrollbar {
+  display: none;
+}
+
+/* ----------- Header Info -------------*/
+.legacy .header {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  z-index: 9999;
+  color: white;
+  padding-left: 2vw;
+}
+
+.legacy .header ul {
+  list-style-type: none;
+  margin-inline: auto;
+}
+
+.legacy .header li {
+  display: inline-block;
+  transition: 1s;
+}
+
+.legacy .stickys {
+  position: sticky;
+  top: 0;
+  padding-top: 1vh;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.legacy .stickys hr {
+  margin: 0 auto;
+  transition: 1s;
+}
+
+.legacy .stickys li:hover {
+  color: rgba(214, 212, 212, 0.459);
+}
+
+/* ----------- Name/First block info -------------*/
+.legacy .blocks {
+  height: 100vh;
+  width: 100vw;
+}
+
+.legacy .Descdes {
+  height: 5vh;
+}
+
+.legacy .bgim {
+  background-image: url(/IMG_1695.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  position: absolute;
+  width: 100vw;
+  height: 120vh;
+  z-index: -1;
+}
+
+.legacy .Socials {
+  margin-bottom: 20vh;
+  text-align: center;
+}
+
+.legacy .Socials div {
+  display: inline;
+  margin: 2%;
+}
+
+.legacy .Bg {
+  width: 100%;
+  height: 100dvh;
+  z-index: -10;
+  position: absolute;
+}
+
+.legacy .arrowdiv {
+  text-align: center;
+}
+
+.legacy .ExpandCircleDownIcon:hover {
+  background-color: bisque;
+}
+
+/* ----------- About me block info -------------*/
+.legacy .AboutTitle {
+  font-size: 32px;
+  color: #fdf0d5;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.legacy .AboutDesp {
+  font-size: 16px;
+  color: #fdf0d5;
+  width: 30vw;
+  text-align: center;
+}
+
+.legacy .avatar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.legacy .SkillsBlock {
+  margin-left: 15vw;
+}
+
+.legacy .SkillsBlock h2 {
+  font-size: 32px;
+}
+
+.legacy .SkillsBlock hr {
+  margin-bottom: 3vh;
+}
+
+.legacy .SkillsBlockL {
+  color: #fdf0d5;
+  display: inline-block;
+  width: 20vw;
+}
+
+.legacy .SkillsBlockR {
+  color: #fdf0d5;
+  display: inline-block;
+  width: 31vw;
+}
+
+/*-------- Resume block --------*/
+.legacy .Resume h1 {
+  font-size: 32px;
+}
+
+.legacy .Resume h3 {
+  font-size: 20px;
+}
+
+.legacy .pulse {
+  animation-delay: 0.5s;
+  animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 1px rgb(136, 230, 127);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgb(136, 230, 127);
+  }
+}
+
+.legacy .container {
+  position: relative;
+  border-radius: 15px;
+}
+
+.legacy .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s ease;
+  background: rgba(43, 43, 43, 0.8);
+}
+
+.legacy .container:hover .overlay {
+  opacity: 1;
+}
+
+.legacy .text {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.legacy .cv {
+  background-color: rgb(52, 119, 52);
+  margin-top: 5vh;
+  width: fit-content;
+  padding: 3%;
+  transition: 1s;
+}
+
+.legacy .cv:hover {
+  filter: brightness(70%);
+}
+
+.legacy .Bufood {
+  height: 100%;
+  padding: 0%;
+}
+
+.legacy .algo {
+  height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .legacy html,
+  .legacy {
+    width: 100vw;
+  }
+  .legacy hr {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .legacy .header {
+    width: 100vw;
+  }
+  .legacy .bgim {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .legacy .blocks {
+    width: 100vw;
+  }
+}

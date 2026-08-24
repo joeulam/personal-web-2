@@ -1,0 +1,86 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-nav;
+  background-color: var(--nav-bg);
+  color: var(--text-primary);
+  transition: background-color $transition-normal, color $transition-normal;
+
+  &__inner {
+    @include flex-between;
+    padding: $space-4 $space-6;
+
+    @include respond-to(md) {
+      padding: $space-4 $space-10;
+    }
+  }
+
+  &__menu-btn {
+    display: block;
+    font-size: $text-2xl;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  &__links {
+    display: none;
+    @include flex-center;
+    width: 50%;
+    margin: 0 auto;
+    gap: $space-8;
+    font-size: $text-lg;
+    font-weight: 500;
+
+    @include respond-to(md) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    transition: color $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--text-muted);
+    }
+  }
+
+  &__theme-toggle {
+    display: none;
+
+    @include respond-to(md) {
+      display: flex;
+    }
+  }
+
+  &__drawer {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: $space-4;
+      font-size: $text-lg;
+      font-weight: 500;
+    }
+
+    a {
+      display: block;
+      transition: color $transition-fast;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--text-muted);
+      }
+    }
+  }
+
+  &__drawer-theme {
+    margin-top: $space-4;
+  }
+}

@@ -1,0 +1,88 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.section--projects {
+  @include section-container($max-width: 72rem);
+  padding-left: $space-6;
+  padding-right: $space-6;
+
+  &__title {
+    font-size: $text-3xl;
+    font-weight: 600;
+  }
+
+  &__description {
+    margin-top: $space-2;
+    margin-bottom: $space-6;
+    color: var(--text-secondary);
+  }
+
+  &__card {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    transition: background-color $transition-normal, color $transition-normal, box-shadow $transition-normal;
+
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
+
+    .ant-card-cover img {
+      height: 12rem;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__card-title {
+    font-weight: 600;
+    font-size: $text-lg;
+  }
+
+  &__card-description {
+    font-size: $text-sm;
+    color: var(--text-secondary);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+    margin-top: $space-4;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-1 $space-3;
+    font-size: $text-xs;
+    font-weight: 500;
+    border-radius: $radius-full;
+    border: 1px solid var(--tag-border);
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    transition: background-color $transition-fast, transform $transition-fast;
+
+    &:hover {
+      background-color: var(--tag-hover-bg);
+      transform: scale(1.05);
+    }
+  }
+
+  &__card-footer {
+    margin-top: $space-4;
+    @include flex-between;
+
+    a {
+      font-size: $text-sm;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: color $transition-fast;
+
+      &:hover {
+        color: var(--link-hover);
+      }
+    }
+  }
+}

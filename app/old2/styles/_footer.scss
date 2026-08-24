@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.site-footer {
+  width: 100vw;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: $space-4 0;
+  transition: background-color $transition-normal, color $transition-normal;
+
+  h6 {
+    font-size: $text-sm;
+    font-weight: 400;
+  }
+}

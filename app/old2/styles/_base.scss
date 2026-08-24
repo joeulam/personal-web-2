@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color $transition-normal, color $transition-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}

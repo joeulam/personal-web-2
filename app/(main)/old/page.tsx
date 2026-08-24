@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import "./old.css";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -20,7 +21,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function old() {
   return (
-    <main>
+    <main className="legacy">
       <SpeedInsights />
       <Analytics />
       <div className='bgim'>
