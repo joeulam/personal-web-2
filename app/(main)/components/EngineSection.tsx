@@ -6,6 +6,15 @@ import { BoxcarSvg } from "./BoxcarSvg";
 import { CALLOUT_ANCHORS, EXD } from "../lib/iso";
 import { ROLES } from "../lib/constants";
 
+/** Vertical slot (% of stage height) for each role callout, alternating margins. */
+const LABEL_SLOTS: Record<number, string> = {
+  0: "8%",
+  1: "27%",
+  2: "40%",
+  3: "55%",
+  4: "72%",
+};
+
 /**
  * The exploded boxcar - a scroll-scrubbed anime.js sequence (like the one on
  * animejs.com): an assembled boxcar idles at center, then the roof lifts, the
@@ -191,8 +200,8 @@ export function EngineSection() {
           <div className="absolute inset-0 grid grid-cols-[260px_1fr_260px]">
             {/* column 1 — left callouts */}
             <div className="relative z-10 h-full">
-              {[0, 2].map((idx) => (
-                <RoleLabel key={ROLES[idx].key} role={ROLES[idx]} idx={idx} slot={idx === 0 ? "13%" : "54%"} labelRefs={labelRefs} />
+              {[0, 2, 4].map((idx) => (
+                <RoleLabel key={ROLES[idx].key} role={ROLES[idx]} idx={idx} slot={LABEL_SLOTS[idx]} labelRefs={labelRefs} />
               ))}
             </div>
 
@@ -206,7 +215,7 @@ export function EngineSection() {
             {/* column 3 — right callouts */}
             <div className="relative z-10 h-full">
               {[1, 3].map((idx) => (
-                <RoleLabel key={ROLES[idx].key} role={ROLES[idx]} idx={idx} slot={idx === 1 ? "27%" : "55%"} labelRefs={labelRefs} />
+                <RoleLabel key={ROLES[idx].key} role={ROLES[idx]} idx={idx} slot={LABEL_SLOTS[idx]} labelRefs={labelRefs} />
               ))}
             </div>
           </div>

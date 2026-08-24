@@ -6,6 +6,7 @@ export const NAV = [
 ];
 
 export const FEATURED = [
+  "Personal Site V4",
   "Calico",
   "Morning brief",
   "Jlgallery",
@@ -14,6 +15,9 @@ export const FEATURED = [
   "PhotoPort",
   "CrossoverTrader",
   "HEYO",
+  "EportfolioV3",
+  "EportfolioV2",
+  "Eportfolio",
 ];
 
 export const SOCIALS = [
@@ -37,7 +41,7 @@ export const ROLES = [
     part: "head" as const,
   },
   {
-    key: "crates",
+    key: "door",
     company: "The Andrew Mellon Foundation",
     role: "IT Intern",
     date: "06/2024 — 08/2024",
@@ -55,13 +59,22 @@ export const ROLES = [
     part: "crank" as const,
   },
   {
-    key: "door",
+    key: "wheels",
     company: "Robo Mind Tech",
     role: "Intern",
     date: "04/2023 — 07/2023",
     blurbLines: ["Drone curriculum built on", "Python and OpenCV."],
     side: "R" as const,
     part: "fw" as const,
+  },
+  {
+    key: "crates",
+    company: "Ford Foundation",
+    role: "IT Intern",
+    date: "06/2026 — 08/2026",
+    blurbLines: ["LLM and OCR document checks,", "plus a Jama to Monday migration."],
+    side: "L" as const,
+    part: "pan" as const,
   },
 ];
 
