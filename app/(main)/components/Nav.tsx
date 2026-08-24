@@ -16,9 +16,6 @@ export function Nav() {
     >
       <div className="mx-auto flex h-14 max-w-[1200px] items-center justify-between px-5 md:h-16 md:px-8">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-7 w-7 rotate-[-3deg] items-center justify-center bg-accent font-mono text-[11px] font-medium leading-none text-paper shadow-card transition-transform duration-300 hover:rotate-0">
-            JL
-          </span>
           <span className="font-display text-xl">Joey Lam</span>
         </a>
         <div className="flex gap-6">
