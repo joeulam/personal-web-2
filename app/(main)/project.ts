@@ -3,12 +3,23 @@ export const data = [
     key: "",
     title: "Personal Site V4",
     description:
-      "The site you're on — an industrial-HUD portfolio with a playable city-builder demo embedded in it.",
+      "The current version of the personal portfolio website",
     techStack:
-      "Next.js, TypeScript, SCSS, Ant Design, Framer Motion",
+      "Next.js, TypeScript, SCSS, Framer Motion",
     websiteURL: "https://joeyresume.vercel.app/",
     gitURL: "https://github.com/joeulam/personal-web-2",
-    image: "/websitev3.png",
+    image: "/websitev4.png",
+  },
+  {
+    key: "",
+    title: "AlgoTrader (In-progress)",
+    description:
+      "Using machine learning and algorithms to create an automated trading bot",
+    techStack:
+      "Next.js, TypeScript, SCSS, Framer Motion",
+    websiteURL: "",
+    gitURL: "",
+    image: "",
   },
   {
     key: "",
@@ -20,28 +31,6 @@ export const data = [
     websiteURL: "https://jlgallery.vercel.app/",
     gitURL: "https://github.com/joeulam/photoweb",
     image: "/jphoto.png",
-  },
-  {
-    key: "",
-    title: "Thrifty (In-Progress)",
-    description:
-      "Marketplace for college students to sell and buy used goods",
-    techStack:
-      "Next.js, Tailwind CSS",
-    websiteURL: "",
-    gitURL: "",
-    image: "/noImg.png",
-  },
-  {
-    key: "",
-    title: "Powerline (In-Progress)",
-    description:
-      "Phone banking app",
-    techStack:
-      "Next.js, Tailwind CSS",
-    websiteURL: "",
-    gitURL: "",
-    image: "/noImg.png",
   },
   {
     key: "",
@@ -187,7 +176,7 @@ export const experience = [
   {
     companyTitle: "Ford Foundation",
     jobTitle: "IT Intern",
-    date: "6/2026 - 8/2026",
+    date: "06/2026 - 08/2026",
     responsibility: [
       `Engineered a full-stack document verification app using NLPs, LLMs, OCR, and PDF parsing to cross-check grant compliance data against Fluxx payments with state persistence and automated error recovery; presented a POC to leadership, securing buy-in to expand system scope to presidential workflows and grant compliance.`,
       `Co-led the Jama-to-Monday.com systems migration by authoring schema field mappings, archive policies, and tracking dashboards, while managing release readiness and status logs to streamline new issue deployments.`,
