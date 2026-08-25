@@ -48,7 +48,7 @@ export function Work() {
                   <span className="font-mono text-[11px] leading-snug text-mute">
                     {item.techStack.split(", ").slice(0, 3).join(" · ")}
                   </span>
-                  <span className="flex gap-4 text-sm">
+                  <span className="flex gap-4 text-sm text-nowrap">
                     {item.gitURL && (
                       <a href={item.gitURL} target="_blank" rel="noopener noreferrer" className="text-link">
                         Code ↗
