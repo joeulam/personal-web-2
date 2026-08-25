@@ -278,7 +278,7 @@ function RoleLabel({
       data-side={role.side}
       style={{ opacity: 0, top: slot }}
       className={`role-label absolute flex w-[240px] flex-col gap-1 ${
-        role.side === "L" ? "right-2 text-right" : "left-2 text-left"
+        role.side === "L" ? "right-0 text-right" : "left-0 text-left"
       }`}
     >
       <span className="font-mono text-xs tracking-[0.08em] text-mute">{role.date}</span>
