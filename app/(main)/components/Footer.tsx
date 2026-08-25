@@ -35,7 +35,7 @@ export function Footer() {
               style={{ transform: "translateY(110%)" }}
               className="block will-change-transform"
             >
-              The next entry could be <em>yours</em>.
+              Looking for the next <em>chapter</em>.
             </span>
           </span>
         </h2>
@@ -44,7 +44,7 @@ export function Footer() {
           style={{ opacity: 0 }}
           className="mt-5 max-w-md text-base leading-relaxed text-[#B8B0A0]"
         >
-          I&apos;m open to 2026 engineering roles and freelance work. The fastest way to reach me is
+          I&apos;m open to 2026 new grad roles and freelance work. The fastest way to reach me is
           LinkedIn.
         </p>
         <div
@@ -79,7 +79,6 @@ export function Footer() {
               </a>
             ))}
           </div>
-          <span>Set in Instrument Serif &amp; Sans · Animated with anime.js</span>
         </div>
       </div>
     </footer>
