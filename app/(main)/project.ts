@@ -1,6 +1,17 @@
 export const data = [
   {
     key: "",
+    title: "AlgoTrader (In-progress)",
+    description:
+      "Using machine learning and algorithms to create an automated trading bot",
+    techStack:
+      "Next.js, TypeScript, SCSS, Framer Motion",
+    websiteURL: "https://joey-quant-trade.vercel.app/",
+    gitURL: "https://github.com/joeulam/stock-trader/tree/master",
+    image: "/quant.png",
+  },
+  {
+    key: "",
     title: "Personal Site V4",
     description:
       "The current version of the personal portfolio website",
@@ -9,17 +20,6 @@ export const data = [
     websiteURL: "https://joeyresume.vercel.app/",
     gitURL: "https://github.com/joeulam/personal-web-2",
     image: "/websitev4.png",
-  },
-  {
-    key: "",
-    title: "AlgoTrader (In-progress)",
-    description:
-      "Using machine learning and algorithms to create an automated trading bot",
-    techStack:
-      "Next.js, TypeScript, SCSS, Framer Motion",
-    websiteURL: "",
-    gitURL: "",
-    image: "",
   },
   {
     key: "",

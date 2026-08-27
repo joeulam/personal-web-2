@@ -6,6 +6,7 @@ export const NAV = [
 ];
 
 export const FEATURED = [
+  "AlgoTrader (In-progress)",
   "Personal Site V4",
   "Calico",
   "Morning brief",
