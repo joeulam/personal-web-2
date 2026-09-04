@@ -30,7 +30,7 @@ export const data = [
       "",
     websiteURL: "https://joey-analytics-cloud.vercel.app/websites",
     gitURL: "",
-    image: "",
+    image: "/umami.png",
   },
   {
     key: "",
