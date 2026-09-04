@@ -23,6 +23,17 @@ export const data = [
   },
   {
     key: "",
+    title: "Fork-Analytics",
+    description:
+      "Fork of cloud.umami",
+    techStack:
+      "",
+    websiteURL: "https://joey-analytics-cloud.vercel.app/websites",
+    gitURL: "",
+    image: "",
+  },
+  {
+    key: "",
     title: "Jlgallery",
     description:
       "A full stack application created to display and share my favorite photos",

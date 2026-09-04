@@ -19,6 +19,7 @@ export const FEATURED = [
   "EportfolioV3",
   "EportfolioV2",
   "Eportfolio",
+  "Fork-Analytics",
 ];
 
 export const SOCIALS = [
