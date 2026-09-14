@@ -38,7 +38,7 @@ export function BoxcarSvg() {
   const [shX, shY] = iso(140, 55, -40);
 
   return (
-    <svg viewBox="420 20 570 960" className="h-full w-full" fill="none">
+    <svg viewBox="420 20 570 960" className="block h-full w-full" fill="none" role="img" aria-label="Exploded isometric boxcar">
       <defs>
         <linearGradient id="alu-t" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#F2F4F7" />

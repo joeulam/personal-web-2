@@ -183,7 +183,29 @@ export function EngineSection() {
       <section className="border-t border-rule px-5 py-16 lg:hidden">
         <div className="mx-auto max-w-[520px]">
           <h2 className="font-display text-3xl">The boxcar</h2>
-          <BoxcarSvg />
+          <p className="mt-3 text-sm leading-relaxed text-mute">
+            Five roles, one craft — each part of the car is a place I&apos;ve worked.
+          </p>
+          <div className="mx-auto mt-6 aspect-[570/960] max-h-[70svh] w-full overflow-hidden">
+            <BoxcarSvg />
+          </div>
+          <ul className="mt-8 space-y-4">
+            {ROLES.map((role) => (
+              <li
+                key={role.key}
+                className="border border-rule bg-card p-5 shadow-card"
+              >
+                <div className="font-mono text-xs tracking-[0.08em] text-mute">{role.date}</div>
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
+                  {role.company}
+                </div>
+                <div className="mt-2 font-display text-xl font-semibold leading-tight">{role.role}</div>
+                <div className="mt-1 font-mono text-[11px] leading-relaxed text-mute">
+                  {role.blurbLines.join(" ")}
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     );

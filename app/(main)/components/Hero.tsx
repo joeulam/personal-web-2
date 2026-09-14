@@ -1,6 +1,6 @@
 "use client";
 
-import { animate, createTimeline } from "animejs";
+import { createTimeline } from "animejs";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
 import { SOCIALS } from "../lib/constants";
@@ -18,7 +18,7 @@ function CatalogCard() {
     <div
       data-hero="card"
       style={{ opacity: 0 }}
-      className="relative w-full max-w-md bg-card border border-rule shadow-card"
+      className="relative w-full max-w-full sm:max-w-md bg-card border border-rule shadow-card"
     >
       <div className="flex items-center justify-between border-b border-rule px-6 py-3">
         <span className="font-mono text-sm font-medium">JOEY LAM</span>
@@ -56,36 +56,54 @@ export function Hero() {
     if (!root || root.dataset.heroDone) return;
     root.dataset.heroDone = "1";
     const q = (s: string) => Array.from(root.querySelectorAll(s));
-    if (prefersReduced()) return;
-    const tl = createTimeline({ defaults: { ease: "outExpo", duration: 750 } });
-    tl.add(q('[data-hero="eyebrow"]'), { opacity: [0, 1], translateY: [10, 0] })
-      .add(q('[data-hero="line"]'), { translateY: ["115%", "0%"], ease: "outQuint", duration: 950 }, "-=450")
-      .add(q('[data-hero="sub"]'), { opacity: [0, 1], translateY: [18, 0] }, "-=500")
-      .add(q('[data-hero="links"]'), { opacity: [0, 1], translateY: [14, 0] }, "-=550")
-      .add(
-        q('[data-hero="card"]'),
-        {
-          opacity: [0, 1],
-          translateY: [44, 0],
-          rotate: [-5.5, -0],
-          ease: "outBack(1.3)",
-          duration: 900,
-        },
-        "-=650"
-      );
+    const showAll = () => {
+      root.querySelectorAll<HTMLElement>('[data-hero]').forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    };
+    if (prefersReduced()) {
+      showAll();
+      return;
+    }
+    try {
+      const tl = createTimeline({ defaults: { ease: "outExpo", duration: 750 } });
+      tl.add(q('[data-hero="eyebrow"]'), { opacity: [0, 1], translateY: [10, 0] })
+        .add(q('[data-hero="line"]'), { translateY: ["115%", "0%"], ease: "outQuint", duration: 950 }, "-=450")
+        .add(q('[data-hero="sub"]'), { opacity: [0, 1], translateY: [18, 0] }, "-=500")
+        .add(q('[data-hero="links"]'), { opacity: [0, 1], translateY: [14, 0] }, "-=550")
+        .add(
+          q('[data-hero="card"]'),
+          {
+            opacity: [0, 1],
+            translateY: [44, 0],
+            rotate: [-5.5, -0],
+            ease: "outBack(1.3)",
+            duration: 900,
+          },
+          "-=650"
+        );
+    } catch {
+      showAll();
+    }
+    // Safety net for slow / interrupted mobile JS: never leave hero invisible.
+    window.setTimeout(() => {
+      const stuck = root.querySelector('[data-hero][style*="opacity: 0"]');
+      if (stuck) showAll();
+    }, 3500);
   }, []);
 
   return (
     <section
       ref={heroRef}
       id="top"
-      className="relative overflow-hidden px-5 pb-20 h-[100vh] pt-32 md:px-8 md:pt-44"
+      className="relative overflow-hidden px-5 pb-16 pt-28 min-h-[100svh] sm:pb-20 sm:pt-32 md:px-8 md:pt-44"
       style={{
         backgroundImage:
           "repeating-linear-gradient(to bottom, transparent 0 31px, rgba(33,28,19,0.035) 31px 32px)",
       }}
     >
-      <div className="mx-auto grid max-w-[1200px] items-center gap-16 md:grid-cols-[1.15fr_1fr] md:gap-12">
+      <div className="mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-[1.15fr_1fr] md:gap-12">
         <div>
           <p
             data-hero="eyebrow"
@@ -96,7 +114,7 @@ export function Hero() {
           </p>
           <h1
             aria-label="Software, made the way you'd make a thing by hand."
-            className="font-display text-5xl leading-[1.05] md:text-7xl"
+            className="font-display text-4xl leading-[1.05] sm:text-5xl md:text-7xl"
           >
             <span aria-hidden className="block overflow-hidden pb-1">
               <span
@@ -141,7 +159,7 @@ export function Hero() {
           </div>
         </div>
 
-        <motion.div style={{ y: cardY }} className="justify-self-center md:justify-self-end">
+        <motion.div style={{ y: cardY }} className="w-full max-w-full justify-self-center sm:max-w-md md:justify-self-end">
           <motion.div
             animate={{ y: [0, -9, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}

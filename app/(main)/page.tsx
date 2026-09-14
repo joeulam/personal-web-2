@@ -15,7 +15,7 @@ import { Work } from "./components/Work";
 export default function Home() {
   return (
     <MotionConfig reducedMotion="user">
-      <main className="relative min-h-screen">
+      <main className="relative min-h-screen overflow-x-clip">
         <Analytics />
         <SpeedInsights />
         <ScrollOrnament />
