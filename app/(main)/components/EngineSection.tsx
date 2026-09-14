@@ -26,7 +26,7 @@ export function EngineSection() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
+    const mq = window.matchMedia("(min-width: 768px)");
     const check = () =>
       setEnabled(mq.matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
     check();
@@ -177,10 +177,10 @@ export function EngineSection() {
       );
   }, [enabled, drawLeaders]);
 
-  // Compact static fallback for mobile / reduced motion.
+  // Compact static fallback for phones / reduced motion.
   if (!enabled) {
     return (
-      <section className="border-t border-rule px-5 py-16 lg:hidden">
+      <section className="border-t border-rule px-5 py-16 md:hidden">
         <div className="mx-auto max-w-[520px]">
           <h2 className="font-display text-3xl">The boxcar</h2>
           <p className="mt-3 text-sm leading-relaxed text-mute">
@@ -212,14 +212,14 @@ export function EngineSection() {
   }
 
   return (
-    <div ref={runwayRef} className="relative hidden h-[340vh] lg:block">
+    <div ref={runwayRef} className="relative hidden h-[340vh] md:block">
       <div
         ref={stageRef}
         className="sticky top-14 flex h-[calc(100vh-3.5rem)] flex-col overflow-hidden md:top-16 md:h-[calc(100vh-4rem)]"
       >
         <div className="relative min-h-0 flex-1">
           {/* strict three-column layout: margins for callouts, isolated center canvas */}
-          <div className="absolute inset-0 grid grid-cols-[260px_1fr_260px]">
+          <div className="absolute inset-0 grid grid-cols-[190px_1fr_190px] lg:grid-cols-[260px_1fr_260px]">
             {/* column 1 — left callouts */}
             <div className="relative z-10 h-full">
               {[0, 2, 4].map((idx) => (
@@ -299,7 +299,7 @@ function RoleLabel({
       }}
       data-side={role.side}
       style={{ opacity: 0, top: slot }}
-      className={`role-label absolute flex w-[240px] flex-col gap-1 ${
+      className={`role-label absolute flex w-[170px] flex-col gap-1 lg:w-[240px] ${
         role.side === "L" ? "right-0 text-right" : "left-0 text-left"
       }`}
     >
@@ -307,7 +307,7 @@ function RoleLabel({
       <span className="mb-3 font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
         {role.company}
       </span>
-      <span className="font-display text-[26px] font-semibold leading-tight">{role.role}</span>
+      <span className="font-display text-xl font-semibold leading-tight lg:text-[26px]">{role.role}</span>
       {role.blurbLines.map((b, j) => (
         <span key={j} className="font-mono text-[11px] leading-relaxed text-mute">
           {b}
