@@ -1,6 +1,17 @@
 export const data = [
   {
     key: "",
+    title: "Mocha",
+    description:
+      "AI-powered web agent integrating RAG, LLMs, and MCP for contextual knowledge retrieval and tool execution.",
+    techStack:
+      "Next.js, TypeScript, SCSS, Framer Motion",
+    websiteURL: "https://mocha-assistant.vercel.app/",
+    gitURL: "https://github.com/joeulam/mocha",
+    image: "/mocha.png",
+  },
+  {
+    key: "",
     title: "AlgoTrader (In-progress)",
     description:
       "Using machine learning and algorithms to create an automated trading bot",
