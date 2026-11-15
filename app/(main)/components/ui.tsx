@@ -50,7 +50,16 @@ export function SectionHead({ title, aside }: { title: string; aside?: string })
 }
 
 /** Project screenshot with a gentle scroll-linked drift inside its frame. */
-export function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+export function ParallaxImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  /** Replaces the default frame styling (margin, aspect ratio, border). */
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -58,7 +67,12 @@ export function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
   return (
-    <div ref={ref} className="mt-4 aspect-[16/9] w-full overflow-hidden border border-rule">
+    <div
+      ref={ref}
+      className={
+        className ?? "mt-4 aspect-[16/9] w-full overflow-hidden border border-rule"
+      }
+    >
       <motion.img
         style={{ y }}
         src={src}

@@ -5,6 +5,9 @@ export const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
+/** The one selected project pulled out into the spotlight card above the grid. */
+export const FEATURED_PROJECT = "Mocha";
+
 export const FEATURED = [
   "Mocha",
   "AlgoTrader (In-progress)",
